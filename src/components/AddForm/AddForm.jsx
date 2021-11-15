@@ -13,9 +13,10 @@ function AddForm() {
                 <select> Type </select>
                 <select> Location </select>
                 <button> Save </button>
-            </form>
+            </form> */}
+
             <button> Cancel </button>
- */}
+
 
 
         </>
