@@ -2,13 +2,16 @@ import React from 'react';
 // import LogOutButton from '../LogOutButton/LogOutButton';
 import { useSelector } from 'react-redux';
 import Nav from '../Nav/Nav';
+import './UserPage.css';
 
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   return (<>
-    <div className="container">
-      <h2>Welcome, {user.username}!</h2>
+ 
+      <h2 className="header">Welcome, {user.username}!</h2>
+
+      <div className="container">
 
       <p> There will be a table here</p>
       <p> and some charts and graphs down here </p>
@@ -17,6 +20,7 @@ function UserPage() {
 
 
     </div>
+    {/* Make this guy sticky  */}
     <Nav />
   </>
   );

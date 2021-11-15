@@ -14,8 +14,10 @@ import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
+import AddForm from '../AddForm/AddForm';
 import UserPage from '../UserPage/UserPage';
 import Figures from '../Figures/Figures';
+import Inventory from '../Inventory/Inventory';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
@@ -34,7 +36,6 @@ function App() {
   return (
     <Router>
       <div>
-        < BackButton />
         {/* <Nav /> */}
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
@@ -56,12 +57,26 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
             exact
             path="/figures"
           >
             <Figures />
           </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/inventory"
+          >
+            <Inventory />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/form"
+          >
+            <AddForm />
+          </ProtectedRoute>
+
 
           <Route
             exact

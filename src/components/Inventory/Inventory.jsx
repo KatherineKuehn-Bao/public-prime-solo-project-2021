@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Figures.css';
+// import './Figures.css';
 import Nav from '../Nav/Nav';
 import BackButton from '../BackButton/BackButton';
 
@@ -9,13 +9,13 @@ import BackButton from '../BackButton/BackButton';
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is
 
-function Figures() {
+function Inventory() {
   return (<>
     < BackButton />
 
-<h1 className="header"> Figures Page </h1>
+<h1 className="header"> Inventory Page </h1>
     <div className="container">
-      <p> charts and graphs will populate this page </p>
+      <p> TABLE OF INVENTORY </p>
     </div>
 
     <Nav />
@@ -23,4 +23,4 @@ function Figures() {
   );
 }
 
-export default Figures;
+export default Inventory;
