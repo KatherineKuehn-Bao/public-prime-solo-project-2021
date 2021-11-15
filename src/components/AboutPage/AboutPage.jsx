@@ -1,4 +1,5 @@
 import React from 'react';
+import RegisterPage from '../RegisterPage/RegisterPage';
 
 // This is one of our simplest components
 // It doesn't have local state,
@@ -9,7 +10,9 @@ function AboutPage() {
   return (
     <div className="container">
       <div>
-        <p>This about page is for anyone to read!</p>
+        <p>In Stock is a household food inventory application.  Enter your recently purchased groceries into your account and see what's in stock at home! 
+        Sign up for free today. 
+        </p>
       </div>
     </div>
   );
