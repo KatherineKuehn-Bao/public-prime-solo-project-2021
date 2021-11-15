@@ -1,6 +1,7 @@
 import React from 'react';
-import LogOutButton from '../LogOutButton/LogOutButton';
+// import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector} from 'react-redux';
+import Nav from '../Nav/Nav';
 
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
@@ -8,8 +9,13 @@ function UserPage() {
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
-      <p>Your ID is: {user.id}</p>
-      <LogOutButton className="btn" />
+
+      <p> There will be a table here</p>
+      <p> and some charts and graphs down here </p>
+      {/* <p>Your ID is: {user.id}</p> */}
+      {/* <LogOutButton className="btn" /> */}
+
+      <Nav />
     </div>
   );
 }
