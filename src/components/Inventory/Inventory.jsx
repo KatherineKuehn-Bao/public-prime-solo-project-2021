@@ -10,17 +10,21 @@ import BackButton from '../BackButton/BackButton';
 // or even care what the redux state is
 
 function Inventory() {
-  return (<>
-    < BackButton />
+    return (<>
+       
 
-<h1 className="header"> Inventory Page </h1>
-    <div className="container">
-      <p> TABLE OF INVENTORY </p>
-    </div>
+        <div className="header">
+        < BackButton />
+            <h1> Inventory Page </h1>
+        </div>
 
-    <Nav />
-  </>
-  );
+        <div className="container">
+            <p> TABLE OF INVENTORY </p>
+        </div>
+
+        <Nav />
+    </>
+    );
 }
 
 export default Inventory;
