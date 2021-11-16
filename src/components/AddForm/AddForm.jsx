@@ -16,7 +16,7 @@ function AddForm() {
 
     //get type array from DB 
     const type = useSelector(store => store.type);
-    const location =useSelector(store => store.location);
+    const location = useSelector(store => store.location);
 
 
     //hold new item in state 
@@ -129,10 +129,14 @@ function AddForm() {
                         <option
                             disabled="disabled">choose a location</option>
 
-                        {/* <option>Fresh</option>
-                        <option>Freezer </option>
-                        <option>Pantry</option>
-                        <option>Fridge</option> */}
+                        {location.map((location) => {
+                            return (
+                                <option key={location.id} value={location.id}>
+                                    {location.location}
+                                </option>
+                            );
+                        })}
+
                     </select>
 
                     <button
