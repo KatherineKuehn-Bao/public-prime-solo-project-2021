@@ -11,58 +11,62 @@ function AddForm() {
     //intialize dispatch for reducer 
     const dispatch = useDispatch();
 
-//hold new item in state 
-const [newItem, setNewItem] = useState({
-    food_name: '',
-    expiration_date: '',
-    food_type: '',
-    location_id: '',
-    //WIll need to look into how to convert type to id.  
-})
+    //hold new item in state 
+    const [newItem, setNewItem] = useState({
+        food_name: '',
+        expiration_date: '',
+        food_type: '',
+        location_id: '',
+        //WIll need to look into how to convert type to id.  
+    })
 
     //when input is filled out
     const handlePropertyChange = (event, property) => {
         console.log('event happened', event);
-        setNewItem({...newItem, [property]: event.target.value })
+        setNewItem({ ...newItem, [property]: event.target.value })
     };
 
-//ADD FUNCTION in SAGA
+    //ADD FUNCTION in SAGA
 
-const addNewFood = (event) => {
-    event.preventDefault();
-    //ADD dispatch to SAGA HERE 
-    console.log('clicked, added a new item');
-}
+    const addNewFood = (event) => {
+        event.preventDefault();
+        //ADD dispatch to SAGA HERE 
+        console.log('clicked, added a new item');
+    }
 
 
     return (
         <>
-        <div className="header"> 
-            < BackButton />
-            <h1> Add Foods</h1>
+            <div
+                className="header">
+                <h1> Add Foods</h1>
 
             </div>
-        
-        <div className="container">
 
-            <form onSubmit={addNewFood}>
-                <input
-                placeholder="food_name"
-                type="text"
-                value={newItem.food_name}
-                // onChange={(event) => handlePropertyChange(event, "food_name")}
-                />
-                <input
-                placeholder="expiration_date"
-                type="date"
-                value={newItem.expiration_date}
-                // onChange={(event) => handlePropertyChange(event, 'expiration_date')}
-                />
+            < BackButton />
+
+            <div
+                className="form">
 
 
-                {/* //REFERENCE FROM SAGAS */}
-                {/* Add Genre DropDown */}
-                {/* <Select 
+                <form onSubmit={addNewFood}>
+                    <input
+                        placeholder="food_name"
+                        type="text"
+                        value={newItem.food_name}
+                    // onChange={(event) => handlePropertyChange(event, "food_name")}
+                    />
+                    <input
+                        placeholder="expiration_date"
+                        type="date"
+                        value={newItem.expiration_date}
+                    // onChange={(event) => handlePropertyChange(event, 'expiration_date')}
+                    />
+
+
+                    {/* //REFERENCE FROM SAGAS */}
+                    {/* Add Genre DropDown */}
+                    {/* <Select 
                         value={newMovie.genre_id}
                         onChange={(event) => handleNameChange(event, 'genre_id')}>
                         <MenuItem 
@@ -80,19 +84,19 @@ const addNewFood = (event) => {
 
 
 
-                <select
-                placeholder="types"
-                value={newItem.food_type}
-                // onChange={(event) => handlePropertyChange (event, 'food_type')}
-                > Fruit
-                </select>
+                    <select
+                        placeholder="types"
+                        value={newItem.food_type}
+                    // onChange={(event) => handlePropertyChange (event, 'food_type')}
+                    > Fruit
+                    </select>
 
 
-                <select> Location </select>
-                <button> Save </button>
-            </form>
+                    <select> Location </select>
+                    <button> Save </button>
+                </form>
 
-            <button> Cancel </button>
+                <button> Cancel </button>
 
             </div>
 

@@ -9,16 +9,21 @@ import BackButton from '../BackButton/BackButton';
 function Figures() {
   return (<>
 
-    <div className="header">
-      < BackButton />
+    <div
+    
+      className="header">
       <h1> Figures Page </h1>
     </div>
 
-    <div className="container">
+    < BackButton />
+
+    <div
+      className="container">
       <p> charts and graphs will populate this page </p>
     </div>
 
     <Nav />
+
   </>
   );
 }

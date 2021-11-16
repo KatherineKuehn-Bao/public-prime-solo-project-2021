@@ -6,7 +6,7 @@ body,
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0px;
 }
 
@@ -21,6 +21,7 @@ Container
 
 .container {
   padding: 20px;
+  align-items: center;
 }
 
 /* --------------------------------------------------------------------------------
@@ -58,6 +59,13 @@ Button
 .btn:hover {
   background-color: #008183;
   text-decoration: none;
+}
+
+.backBtn{
+font-size: smaller;
+color: #f2f2f2;
+  padding-left: 20px;
+
 }
 
 /* This line makes the "Register" and "Login" buttons look like links */
@@ -111,3 +119,8 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
+
+
+/* --------------------------------------------------------------------------------
+Container
+-------------------------------------------------------------------------------- */

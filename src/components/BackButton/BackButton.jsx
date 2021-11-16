@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 function BackButton() {
 
     return (<>
-        <div>
-            <Link to="/home">
-                <h2 className="nav-title"> back </h2>
-                
+        <div >
+            <Link
+                className="backBtn"
+                to="/home">
+                <h1> back </h1>
+
             </Link>
         </div>
     </>
