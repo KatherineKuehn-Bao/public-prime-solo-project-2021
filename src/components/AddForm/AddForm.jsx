@@ -54,13 +54,13 @@ function AddForm() {
                         placeholder="food_name"
                         type="text"
                         value={newItem.food_name}
-                    // onChange={(event) => handlePropertyChange(event, "food_name")}
+                    onChange={(event) => handlePropertyChange(event, "food_name")}
                     />
                     <input
                         placeholder="expiration_date"
                         type="date"
                         value={newItem.expiration_date}
-                    // onChange={(event) => handlePropertyChange(event, 'expiration_date')}
+                    onChange={(event) => handlePropertyChange(event, 'expiration_date')}
                     />
 
 
@@ -98,7 +98,7 @@ function AddForm() {
                     <select
                         placeholder="location"
                         value={newItem.location}
-                    // onChange={(event) => handlePropertyChange (event, 'food_type')}
+                    onChange={(event) => handlePropertyChange (event, 'food_type')}
                     >
                         <option>Fresh</option>
                         <option>Freezer </option>
