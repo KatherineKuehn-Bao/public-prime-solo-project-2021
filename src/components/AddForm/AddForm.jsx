@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 
 import BackButton from "../BackButton/BackButton";
@@ -14,6 +14,10 @@ function AddForm() {
     const dispatch = useDispatch();
     const history = useHistory ();
 
+    //get type array from DB 
+    const type = useSelector(store => store.type);
+
+
     //hold new item in state 
     const [newItem, setNewItem] = useState({
         food_name: '',
@@ -22,6 +26,11 @@ function AddForm() {
         location_id: '',
         //WIll need to look into how to convert type to id.  
     })
+
+    useEffect(() => {
+        dispatch({ type: 'FETCH_TYPE' });
+    }, []);
+
 
     //when input is filled out
     const handlePropertyChange = (event, property) => {
@@ -47,11 +56,17 @@ function AddForm() {
         //clear form
 
     }
-
+//WORKS 
     const cancelClick = (event) => {
         alert('You are leaving the page and no changes will be saved')
         history.push('/user');
     }
+
+
+
+//testing type from DB 
+    console.log('types of food', type);
+
 
     return (
         <>

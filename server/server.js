@@ -10,7 +10,10 @@ const passport = require('./strategies/user.strategy');
 // Route includes
 const userRouter = require('./routes/user.router');
 //added type router 
-const typeRouter = require('../routes/type.router');
+const typeRouter = require('./routes/type.router');
+
+
+
 
 // Body parser middleware
 app.use(bodyParser.json());
