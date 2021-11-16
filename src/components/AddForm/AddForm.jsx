@@ -46,7 +46,7 @@ function AddForm() {
             < BackButton />
 
             <div
-                className="form">
+                className="formPanel">
 
 
                 <form onSubmit={addNewFood}>
@@ -83,20 +83,34 @@ function AddForm() {
                     </Select> */}
 
 
+                        <select
+                            placeholder="types"
+                            value={newItem.food_type}
+                        // onChange={(event) => handlePropertyChange (event, 'food_type')}
+                        >
+                            <option>Fruits</option>
+                            <option>Vegetables </option>
+                            <option>Grains</option>
+                            <option>Legumes</option>
+                            <option>Processed</option>
+                        </select>
 
                     <select
-                        placeholder="types"
-                        value={newItem.food_type}
+                        placeholder="location"
+                        value={newItem.location}
                     // onChange={(event) => handlePropertyChange (event, 'food_type')}
-                    > Fruit
+                    >
+                        <option>Fresh</option>
+                        <option>Freezer </option>
+                        <option>Pantry</option>
+                        <option>Fridge</option>
                     </select>
 
-
-                    <select> Location </select>
                     <button> Save </button>
+                    <button> Cancel </button>
                 </form>
 
-                <button> Cancel </button>
+
 
             </div>
 
