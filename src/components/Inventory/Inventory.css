@@ -1,10 +1,10 @@
-.header {
+header {
    
     align-items: center;
     text-align: center;
     font-size: 16px;
     /* Remove the next line if you want the span to appear next to the h1 */
-    justify-content: space-between;
+    /* justify-content: space-between; */
     border-bottom: 1px solid #000;
-    padding: 10px 30px;
+    padding: 20px 30px;
   }
