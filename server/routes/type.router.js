@@ -30,7 +30,7 @@ router.get('/location', (req, res) => {
 
 //**** GET ALL INGREDIENTs TO RENDER TO DOM  */
 router.get('/ingredients', (req, res) => {
-    const sqlText = `SELECT * FROM ingredients ORDER BY date;`;
+    const sqlText = `SELECT * FROM ingredients ORDER BY expiration_date;`;
     pool.query(sqlText)
       .then((result) => {
         //console.log(`Got inventory:`, result);
