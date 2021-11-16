@@ -16,6 +16,7 @@ function AddForm() {
 
     //get type array from DB 
     const type = useSelector(store => store.type);
+    const location =useSelector(store => store.location);
 
 
     //hold new item in state 
@@ -29,6 +30,7 @@ function AddForm() {
 
     useEffect(() => {
         dispatch({ type: 'FETCH_TYPE' });
+        dispatch({ type: 'FETCH_LOCATION' });
     }, []);
 
 
@@ -66,6 +68,7 @@ function AddForm() {
 
     //testing type from DB 
     console.log('types of food', type);
+    console.log('location of food', location);
 
 
     return (
@@ -96,27 +99,8 @@ function AddForm() {
                         onChange={(event) => handlePropertyChange(event, 'expiration_date')}
                     />
 
-                    {/* <Select 
-                        value={newMovie.genre_id}
-                        onChange={(event) => handleNameChange(event, 'genre_id')}>
-                        <MenuItem 
-                        disabled value='0'>
-                            Genres
-                        </MenuItem>
-
-
-                        {genres.map((genre) => {
-                            return (
-                                <MenuItem key={genre.id} value={genre.id}>
-                                    {genre.name}
-                                </MenuItem>
-                            );
-                        })}
-                    </Select> */}
-
 
                     {/* Types Dropdown */}
-
                     <select
                         placeholder="types"
                         value={newItem.food_type_id}
@@ -128,35 +112,27 @@ function AddForm() {
 
                         {type.map((type) => {
                             return (
-                                 <option key= {type.id} value={type.id}>
-                                     {type.type}
-                                     </option>
+                                <option key={type.id} value={type.id}>
+                                    {type.type}
+                                </option>
                             );
                         })}
-
-                        {/* <option>Fruits</option>
-                        <option>Vegetables </option>
-                        <option>Grains</option>
-                        <option>Legumes</option>
-                        <option>Processed</option>
-                        <option>Nuts & Seeds</option> */}
-
                     </select>
 
 
 
                     <select
-                        placeholder="location"
-                        value={newItem.location}
-                        onChange={(event) => handlePropertyChange(event, 'location')}
+                        placeholder="location_id"
+                        value={newItem.location_id}
+                        onChange={(event) => handlePropertyChange(event, 'location_id')}
                     >
                         <option
                             disabled="disabled">choose a location</option>
 
-                        <option>Fresh</option>
+                        {/* <option>Fresh</option>
                         <option>Freezer </option>
                         <option>Pantry</option>
-                        <option>Fridge</option>
+                        <option>Fridge</option> */}
                     </select>
 
                     <button

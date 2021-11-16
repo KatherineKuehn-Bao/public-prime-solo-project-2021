@@ -15,6 +15,18 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/location', (req, res) => {
+    let queryText = `SELECT * FROM "location"`;
+    pool.query(queryText)
+    .then(result => {
+        res.send(result.rows);
+    })
+    .catch(err => {
+        console.log('error: get all locations', err);
+    res.sendStatus (500)        
+    });
+});
+
 /**
  * POST route template
  */
