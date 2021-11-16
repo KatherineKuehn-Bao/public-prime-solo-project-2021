@@ -23,6 +23,7 @@ function AddForm() {
     const [newItem, setNewItem] = useState({
         food_name: '',
         expiration_date: '',
+        status: 'storage',
         food_type_id: '',
         location_id: '',
         //WIll need to look into how to convert type to id.  
@@ -36,16 +37,20 @@ function AddForm() {
 
     //when input is filled out
     const handlePropertyChange = (event, property) => {
-        console.log('event happened', newItem);
-        setNewItem({ ...newItem, [property]: event.target.value })
+        // console.log('event happened', newItem);
+        setNewItem({
+            ...newItem,
+            [property]: event.target.value,
+        })
     };
 
     //ADD FUNCTION in SAGA
 
 
     //ADD OR EDIT 
-    const handleSubmit = (event, item) => {
+    const handleSubmit = (event, newItem) => {
         event.preventDefault();
+        addItem(newItem);
         // if (mode === 'add'){
         //         addItem(item);
         // } else {
@@ -54,6 +59,9 @@ function AddForm() {
         console.log('new item', newItem);
     }
     const addItem = (newItem) => {
+        dispatch({ type: 'POST_ITEM', payload: newItem});
+        console.log('clicked, added new item');
+        
         //sagas
         //clear form
 
