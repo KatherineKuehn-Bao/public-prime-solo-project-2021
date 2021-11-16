@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router";
+
 import BackButton from "../BackButton/BackButton";
 
 
@@ -10,6 +12,7 @@ function AddForm() {
 
     //intialize dispatch for reducer 
     const dispatch = useDispatch();
+    const history = useHistory ();
 
     //hold new item in state 
     const [newItem, setNewItem] = useState({
@@ -22,18 +25,33 @@ function AddForm() {
 
     //when input is filled out
     const handlePropertyChange = (event, property) => {
-        console.log('event happened', event);
+        console.log('event happened', newItem);
         setNewItem({ ...newItem, [property]: event.target.value })
     };
 
     //ADD FUNCTION in SAGA
 
-    const addNewFood = (event) => {
+
+    //ADD OR EDIT 
+    const handleSubmit = (event, item) => {
         event.preventDefault();
-        //ADD dispatch to SAGA HERE 
-        console.log('clicked, added a new item');
+        // if (mode === 'add'){
+        //         addItem(item);
+        // } else {
+        //     updateItem(item);
+        // }
+        console.log('new item', newItem);
+    }
+    const addItem = (newItem) => {
+        //sagas
+        //clear form
+
     }
 
+    const cancelClick = (event) => {
+        alert('You are leaving the page and no changes will be saved')
+        history.push('/user');
+    }
 
     return (
         <>
@@ -49,18 +67,18 @@ function AddForm() {
                 className="formPanel">
 
 
-                <form onSubmit={addNewFood}>
+                <form onSubmit={(event) => handleSubmit(event, newItem)}>
                     <input
                         placeholder="food_name"
                         type="text"
                         value={newItem.food_name}
-                    onChange={(event) => handlePropertyChange(event, "food_name")}
+                        onChange={(event) => handlePropertyChange(event, "food_name")}
                     />
                     <input
                         placeholder="expiration_date"
                         type="date"
                         value={newItem.expiration_date}
-                    onChange={(event) => handlePropertyChange(event, 'expiration_date')}
+                        onChange={(event) => handlePropertyChange(event, 'expiration_date')}
                     />
 
 
@@ -83,32 +101,47 @@ function AddForm() {
                     </Select> */}
 
 
-                        <select
-                            placeholder="types"
-                            value={newItem.food_type}
-                        // onChange={(event) => handlePropertyChange (event, 'food_type')}
-                        >
-                            <option>Fruits</option>
-                            <option>Vegetables </option>
-                            <option>Grains</option>
-                            <option>Legumes</option>
-                            <option>Processed</option>
-                        </select>
+                    <select
+                        placeholder="types"
+                        value={newItem.food_type}
+                        onChange={(event) => handlePropertyChange(event, 'food_type')}
+                    >
+                        <option
+                            disabled value='1'>
+                            choose a type</option>
+
+                        <option>Fruits</option>
+                        <option>Vegetables </option>
+                        <option>Grains</option>
+                        <option>Legumes</option>
+                        <option>Processed</option>
+                        <option>Nuts & Seeds</option>
+
+                    </select>
 
                     <select
                         placeholder="location"
                         value={newItem.location}
-                    onChange={(event) => handlePropertyChange (event, 'food_type')}
+                        onChange={(event) => handlePropertyChange(event, 'location')}
                     >
+                        <option
+                            disabled="disabled">choose a location</option>
+
                         <option>Fresh</option>
                         <option>Freezer </option>
                         <option>Pantry</option>
                         <option>Fridge</option>
                     </select>
 
-                    <button> Save </button>
-                    <button> Cancel </button>
-                </form>
+                    <button
+                        type="submit">
+                        Save </button>
+                        </form>
+
+                    <button
+                    onClick={cancelClick}>
+                         Cancel </button>
+               
 
 
 
