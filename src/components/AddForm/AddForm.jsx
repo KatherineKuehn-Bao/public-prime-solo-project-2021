@@ -12,7 +12,7 @@ function AddForm() {
 
     //intialize dispatch for reducer 
     const dispatch = useDispatch();
-    const history = useHistory ();
+    const history = useHistory();
 
     //get type array from DB 
     const type = useSelector(store => store.type);
@@ -22,7 +22,7 @@ function AddForm() {
     const [newItem, setNewItem] = useState({
         food_name: '',
         expiration_date: '',
-        food_type: '',
+        food_type_id: '',
         location_id: '',
         //WIll need to look into how to convert type to id.  
     })
@@ -56,7 +56,7 @@ function AddForm() {
         //clear form
 
     }
-//WORKS 
+    //WORKS 
     const cancelClick = (event) => {
         alert('You are leaving the page and no changes will be saved')
         history.push('/user');
@@ -64,7 +64,7 @@ function AddForm() {
 
 
 
-//testing type from DB 
+    //testing type from DB 
     console.log('types of food', type);
 
 
@@ -96,9 +96,6 @@ function AddForm() {
                         onChange={(event) => handlePropertyChange(event, 'expiration_date')}
                     />
 
-
-                    {/* //REFERENCE FROM SAGAS */}
-                    {/* Add Genre DropDown */}
                     {/* <Select 
                         value={newMovie.genre_id}
                         onChange={(event) => handleNameChange(event, 'genre_id')}>
@@ -106,6 +103,8 @@ function AddForm() {
                         disabled value='0'>
                             Genres
                         </MenuItem>
+
+
                         {genres.map((genre) => {
                             return (
                                 <MenuItem key={genre.id} value={genre.id}>
@@ -116,23 +115,35 @@ function AddForm() {
                     </Select> */}
 
 
+                    {/* Types Dropdown */}
+
                     <select
                         placeholder="types"
-                        value={newItem.food_type}
-                        onChange={(event) => handlePropertyChange(event, 'food_type')}
-                    >
+                        value={newItem.food_type_id}
+                        onChange={(event) => handlePropertyChange(event, 'food_type_id')}>
                         <option
-                            disabled value='1'>
-                            choose a type</option>
+                            disabled value='0'>
+                            choose a type
+                        </option>
 
-                        <option>Fruits</option>
+                        {type.map((type) => {
+                            return (
+                                 <option key= {type.id} value={type.id}>
+                                     {type.type}
+                                     </option>
+                            );
+                        })}
+
+                        {/* <option>Fruits</option>
                         <option>Vegetables </option>
                         <option>Grains</option>
                         <option>Legumes</option>
                         <option>Processed</option>
-                        <option>Nuts & Seeds</option>
+                        <option>Nuts & Seeds</option> */}
 
                     </select>
+
+
 
                     <select
                         placeholder="location"
@@ -151,12 +162,12 @@ function AddForm() {
                     <button
                         type="submit">
                         Save </button>
-                        </form>
+                </form>
 
-                    <button
+                <button
                     onClick={cancelClick}>
-                         Cancel </button>
-               
+                    Cancel </button>
+
 
 
 
