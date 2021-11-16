@@ -4,8 +4,6 @@ import './Figures.css';
 import Nav from '../Nav/Nav';
 import BackButton from '../BackButton/BackButton';
 
-
-
 function Figures() {
   return (<>
 

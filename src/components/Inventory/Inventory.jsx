@@ -3,7 +3,7 @@ import React from 'react';
 // import './Figures.css';
 import Nav from '../Nav/Nav';
 import BackButton from '../BackButton/BackButton';
-import './Inventory.css';
+import '../App/App.css';
 
 //This component will map through an array of object and render onto a table on the DOM 
 function Inventory() {
@@ -15,7 +15,7 @@ function Inventory() {
               <h1>Inventory Page </h1>
 
         </div>
-        
+
         < BackButton/>
 
         <div className="container">

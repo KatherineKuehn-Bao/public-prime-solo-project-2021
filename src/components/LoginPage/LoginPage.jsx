@@ -9,6 +9,8 @@ function LoginPage() {
     <div>
       <LoginForm />
 
+
+{/* //registration button  */}
       <center>
         <button
           type="button"
