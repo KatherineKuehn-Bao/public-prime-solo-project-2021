@@ -28,9 +28,11 @@ function App() {
   const dispatch = useDispatch();
 
   const user = useSelector(store => store.user);
+  // const [ingredientsList, setIngredientsList] = useState([]);
 
   useEffect(() => {
     dispatch({ type: 'FETCH_USER' });
+    // dispatch({ type: 'FETCH_INGREDIENTS' });
   }, [dispatch]);
 
   return (

@@ -59,11 +59,11 @@ function AddForm() {
         console.log('new item', newItem);
     }
     const addItem = (newItem) => {
+        //sagas
         dispatch({ type: 'POST_ITEM', payload: newItem});
         console.log('clicked, added new item');
-        
-        //sagas
         //clear form
+        clearForm();
 
     }
     //WORKS 
@@ -72,11 +72,17 @@ function AddForm() {
         history.push('/user');
     }
 
-
-
-    //testing type from DB 
-    console.log('types of food', type);
-    console.log('location of food', location);
+    //Clear the form 
+    const clearForm = () => {
+        console.log('resetting form');
+        setNewItem({ 
+        food_name: '',
+        expiration_date: '',
+        status: '',
+        food_type_id: '',
+        location_id: ''
+        })
+    }
 
 
     return (

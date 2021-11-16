@@ -7,7 +7,7 @@ function* postItem(action) {
         console.log('new item', action.payload);
         yield axios.post ('/api/type/post', action.payload);
 
-        //yield put ({type: 'FETCH_ITEMS'})
+        //yield put ({type: 'FETCH_INGREDIENTS'})
     } catch (error) {
         console.log('Error in POST', error);
         

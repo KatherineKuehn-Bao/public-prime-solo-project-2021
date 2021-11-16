@@ -5,6 +5,7 @@ import user from './user.reducer';
 import type from './type.reducer';
 import location from './location.reducer';
 import newItem from './newItem.reducer';
+import ingredients from './ingredients.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   type, // add type to the combine
   location, //ADDED LOCATION 
   newItem,
+  ingredients,
 });
 
 export default rootReducer;

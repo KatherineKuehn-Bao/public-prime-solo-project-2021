@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+
 // import LogOutButton from '../LogOutButton/LogOutButton';
 import { useSelector } from 'react-redux';
 import Nav from '../Nav/Nav';
@@ -7,6 +9,15 @@ import './UserPage.css';
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
+  const [ingredientsList, setIngredientsList] = useState([]);
+  const dispatch = useDispatch();
+
+useEffect(() => {
+  dispatch({ type: 'FETCH_INGREDIENTS' });
+}), [];
+
+console.log('ingredients list', ingredientsList);
+
   return (<>
  
       <h2 className="header">Welcome, {user.username}!</h2>

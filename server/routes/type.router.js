@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
     });
 });
 
+//**** GET LOCATIONS fro drop down  */
 router.get('/location', (req, res) => {
     let queryText = `SELECT * FROM "location"`;
     pool.query(queryText)
@@ -27,9 +28,22 @@ router.get('/location', (req, res) => {
     });
 });
 
-/**
- * POST route template
- */
+//**** GET ALL INGREDIENTs TO RENDER TO DOM  */
+router.get('/ingredients', (req, res) => {
+    const sqlText = `SELECT * FROM ingredients ORDER BY date;`;
+    pool.query(sqlText)
+      .then((result) => {
+        //console.log(`Got inventory:`, result);
+        res.send(result.rows);
+      })
+      .catch((error) => {
+        console.log(`Error making database query ${sqlText}`, error);
+        res.sendStatus(500); // Good server always responds
+      })
+  })
+
+
+// ADD NEW ITEM TO INGREDIENTS from form
 router.post('/post', (req, res) => {
     console.log('REq. body', req.body);
 
@@ -54,27 +68,5 @@ router.post('/post', (req, res) => {
         })
 });
 
-// EXAMPLE 
-//  router.post('/', (req, res) => {
-//     const newItem = req.body;
-//     const sqlText = `INSERT INTO inventory (name, quantity, measure) 
-//         VALUES ($1, $2, $3)`;
-//     pool.query(sqlText, [newItem.name, newItem.quantity, newItem.measure])
-//       .then((result) => {
-//         console.log(`Added song to the database`, newItem);
-//         res.sendStatus(201);
-//       })
-//       .catch((error) => {
-//         console.log(`Error making database query ${sqlText}`, error);
-//         res.sendStatus(500); // Good server always responds
-//       })
-//   })
-
-
-
-
-router.post('/', (req, res) => {
-  // POST route code here
-});
 
 module.exports = router;
