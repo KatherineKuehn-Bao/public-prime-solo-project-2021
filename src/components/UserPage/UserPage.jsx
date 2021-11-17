@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router';
 
 // import LogOutButton from '../LogOutButton/LogOutButton';
 import { useSelector } from 'react-redux';
@@ -13,6 +14,7 @@ function UserPage() {
   const user = useSelector((store) => store.user);
   const ingredients = useSelector((store) => store.ingredients);
   const dispatch = useDispatch();
+  const history = useHistory();
   //troubleshooting constant fetching 
   const [loaded, setLoaded] = useState(false);
 
@@ -23,6 +25,10 @@ function UserPage() {
     }
   }), [];
 
+  const viewMore = () => {
+    history.push('/inventory');
+  }
+
   console.log('ingredients list', ingredients);
 
   return (<>
@@ -32,8 +38,8 @@ function UserPage() {
     <div className="container">
 
       <IngredientsList />
-      
-      <p> There will be a table here</p>
+      <button onClick={viewMore}> View More </button>
+
       <p> and some charts and graphs down here </p>
       {/* <p>Your ID is: {user.id}</p> */}
       {/* <LogOutButton className="btn" /> */}
