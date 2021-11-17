@@ -8,20 +8,31 @@ function IngredientsList() {
     const ingredients = useSelector(store => store.ingredients);
 
 
-    console.log('ingredients in ingredients list', ingredients);
+    // console.log('ingredients in ingredients list', ingredients);
+
     return (
+        <>
+            <h1> What's in Stock </h1>
+            <div className="container">
+                <table>
+                    <tbody>
 
-        <div className="container">
+                        {ingredients.map(ingredient =>
+                            <trow key={ingredient.id}>
+                                <td> {ingredient.food_name} </td>
+                                <td> </td>
+                                <td> <button> Consume </button></td>
+                                <td> <button> Edit </button></td>
+                                <td> <button> Trash </button></td>
+                            </trow>
 
-            {ingredients.map(ingredient => (
-                <div
-                    key={ingredient.id}
-                >
-                    <h3 className="name">{ingredient.food_name}</h3>
-                </div>
-            ))}
+                        )}
+                    </tbody>
+                </table>
 
-        </div>
+
+            </div>
+        </>
     )
 
 }
