@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 
-import BackButton from "../BackButton/BackButton";
+// import BackButton from "../BackButton/BackButton";
 
 
 
@@ -60,7 +60,7 @@ function AddForm() {
     }
     const addItem = (newItem) => {
         //sagas
-        dispatch({ type: 'POST_ITEM', payload: newItem});
+        dispatch({ type: 'POST_ITEM', payload: newItem });
         console.log('clicked, added new item');
         //clear form
         clearForm();
@@ -68,19 +68,18 @@ function AddForm() {
     }
     //WORKS 
     const cancelClick = (event) => {
-        alert('You are leaving the page and no changes will be saved')
         history.push('/user');
     }
 
     //Clear the form 
     const clearForm = () => {
         console.log('resetting form');
-        setNewItem({ 
-        food_name: '',
-        expiration_date: '',
-        status: '',
-        food_type_id: '',
-        location_id: ''
+        setNewItem({
+            food_name: '',
+            expiration_date: '',
+            status: '',
+            food_type_id: '',
+            location_id: ''
         })
     }
 
@@ -93,7 +92,7 @@ function AddForm() {
 
             </div>
 
-            < BackButton />
+            {/* < BackButton /> */}
 
             <div
                 className="formPanel">
@@ -156,13 +155,12 @@ function AddForm() {
                     <button
                         type="submit">
                         Save </button>
+
+                    <button
+                        type="button"
+                        onClick={cancelClick}>
+                        Back to Home  </button>
                 </form>
-
-                <button
-                    onClick={cancelClick}>
-                    Cancel </button>
-
-
 
 
             </div>

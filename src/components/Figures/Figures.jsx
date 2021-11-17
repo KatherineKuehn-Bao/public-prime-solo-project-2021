@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Figures.css';
 import Nav from '../Nav/Nav';
-import BackButton from '../BackButton/BackButton';
+// import BackButton from '../BackButton/BackButton';
 
 function Figures() {
   return (<>
@@ -13,7 +13,7 @@ function Figures() {
       <h1> Figures Page </h1>
     </div>
 
-    < BackButton />
+    {/* < BackButton /> */}
 
     <div
       className="container">
