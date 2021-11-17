@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 // import LogOutButton from '../LogOutButton/LogOutButton';
 import { useSelector } from 'react-redux';
 import Nav from '../Nav/Nav';
+import IngredientsList from '../IngredientsList/IngredientsList';
+
 import './UserPage.css';
 
 function UserPage() {
@@ -15,7 +17,7 @@ function UserPage() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    if ( !loaded ){
+    if (!loaded) {
       dispatch({ type: 'FETCH_INGREDIENTS' });
       setLoaded(true);
     }
@@ -29,6 +31,8 @@ function UserPage() {
 
     <div className="container">
 
+      <IngredientsList />
+      
       <p> There will be a table here</p>
       <p> and some charts and graphs down here </p>
       {/* <p>Your ID is: {user.id}</p> */}
