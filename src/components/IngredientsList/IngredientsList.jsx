@@ -1,14 +1,18 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 
 
 function IngredientsList() {
 
+            // Get ingredients from the store
     const ingredients = useSelector(store => store.ingredients);
+    //intialize dispatch 
+    const dispatch = useDispatch();
 
-
-    // console.log('ingredients in ingredients list', ingredients);
+    const handleDelete = () => {
+        dispatch({type: 'DELETE_ITEM', payload: item})
+      }
 
     return (
         <>
@@ -23,7 +27,7 @@ function IngredientsList() {
                                 <td> </td>
                                 <td> <button> Consume </button></td>
                                 <td> <button> Edit </button></td>
-                                <td> <button> Trash </button></td>
+                                <td> <button onClick={handleDelete}> Delete </button></td>
                             </trow>
 
                         )}

@@ -6,6 +6,7 @@ import typeSaga from './type.saga';
 import locationSaga from './location.saga';
 import newItemSaga from './newItem.saga';
 import ingredientsSaga from './ingredient.saga';
+import deleteSaga from './delete.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -23,5 +24,6 @@ export default function* rootSaga() {
     locationSaga(),
     newItemSaga(),
     ingredientsSaga(),
+    deleteSaga(),
   ]);
 }
