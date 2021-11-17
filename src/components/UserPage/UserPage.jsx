@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 // import LogOutButton from '../LogOutButton/LogOutButton';
@@ -11,18 +11,23 @@ function UserPage() {
   const user = useSelector((store) => store.user);
   const ingredients = useSelector((store) => store.ingredients);
   const dispatch = useDispatch();
+  //troubleshooting constant fetching 
+  const [loaded, setLoaded] = useState(false);
 
-useEffect(() => {
-  dispatch({ type: 'FETCH_INGREDIENTS' });
-}), [];
+  useEffect(() => {
+    if ( !loaded ){
+      dispatch({ type: 'FETCH_INGREDIENTS' });
+      setLoaded(true);
+    }
+  }), [];
 
-console.log('ingredients list', ingredients);
+  console.log('ingredients list', ingredients);
 
   return (<>
- 
-      <h2 className="header">Welcome, {user.username}!</h2>
 
-      <div className="container">
+    <h2 className="header">Welcome, {user.username}!</h2>
+
+    <div className="container">
 
       <p> There will be a table here</p>
       <p> and some charts and graphs down here </p>
