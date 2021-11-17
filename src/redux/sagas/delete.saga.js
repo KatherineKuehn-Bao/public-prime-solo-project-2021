@@ -5,9 +5,10 @@ import axios from 'axios';
 
 function* deleteIngredient(action) {
     try {
-        //when DELETE_ITEM is called 
-        yield axios.delete(`/api/delete/${action.payload.id}`)
-        console.log(action.payload);
+        //when DELETE_INGREDIENT is called 
+        //${action.payload.id}  corresponds to /:id
+        yield axios.delete(`/api/user/delete/${action.payload.id}`)
+        console.log('action.payload' , action.payload);
         //call all FETCH to re render to page 
         yield put({ type: "FETCH_INGREDIENTS" })
     } catch (err) {
