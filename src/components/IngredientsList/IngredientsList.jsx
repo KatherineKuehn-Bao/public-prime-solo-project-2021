@@ -1,14 +1,8 @@
-import { useSelector } from 'react-redux';
-
-
-
+import { useSelector, useDispatch } from 'react-redux';
+import IngredientsItem from '../IngredientsItem/IngredientsItem';
 
 function IngredientsList() {
 
-    const ingredients = useSelector(store => store.ingredients);
-
-
-    // console.log('ingredients in ingredients list', ingredients);
 
     return (
         <>
@@ -17,16 +11,7 @@ function IngredientsList() {
                 <table>
                     <tbody>
 
-                        {ingredients.map(ingredient =>
-                            <trow key={ingredient.id}>
-                                <td> {ingredient.food_name} </td>
-                                <td> </td>
-                                <td> <button> Consume </button></td>
-                                <td> <button> Edit </button></td>
-                                <td> <button> Trash </button></td>
-                            </trow>
-
-                        )}
+                        <IngredientsItem />
                     </tbody>
                 </table>
 

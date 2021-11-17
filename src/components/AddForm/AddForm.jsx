@@ -133,7 +133,7 @@ function AddForm() {
                     </select>
 
 
-
+                    {/* Location dropdown */}
                     <select
                         placeholder="location_id"
                         value={newItem.location_id}
