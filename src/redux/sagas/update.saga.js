@@ -5,7 +5,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* updateItem(action) {
     try {
         console.log('update item', action.payload);
-        //point to the update router
+        //point to the update router - send over ingredient
         yield axios.put('/api/update', action.payload);
 
        
@@ -15,6 +15,7 @@ function* updateItem(action) {
     }
 }
 
+//listen for UPDATE_ITEM dispatch 
 function* updateItemSaga() {
     yield takeLatest('UPDATE_ITEM', updateItem);
 }

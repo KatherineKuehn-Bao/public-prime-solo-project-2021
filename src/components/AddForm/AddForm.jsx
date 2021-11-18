@@ -44,38 +44,35 @@ function AddForm() {
         })
     };
 
-    //ADD FUNCTION in SAGA
-
-
-    //ADD OR EDIT 
+    //ADD -- ONLY ADD 
     const handleSubmit = (event, newItem) => {
         event.preventDefault();
         addItem(newItem);
-        if (mode === 'add') {
-            addItem(item);
-        } else {
-            updateItem(item);
-        }
+        // if (mode === 'add') {
+        //     addItem(item);
+        // } else {
+        //     updateItem(item);
+        // }
         console.log('new item', newItem);
     }
 
-//Add new item to the DB 
+    //Add new item to the DB Dispatch "POST_ITEM" / clearForm()
     const addItem = (newItem) => {
-        //sagas
+        //sagas POST 
         dispatch({ type: 'POST_ITEM', payload: newItem });
         console.log('clicked, added new item');
         //clear form
         clearForm();
     }
 
-    //update item in the DB 
-    const updateItem = (item) => {
-        //sagas 
-        dispatch({ type: 'UPDATE_ITEM', payload: item });
-        console.log('clicked, edit item');
-    }
+    //update item in the DB -
+    // const updateItem = (item) => {
+    //     //sagas 
+    //     dispatch({ type: 'UPDATE_ITEM', payload: item });
+    //     console.log('clicked, edit item');
+    // }
 
-    //WORKS - back to home 
+    //WORKS - back to home - push to /user page
     const cancelClick = (event) => {
         history.push('/user');
     }
@@ -98,10 +95,7 @@ function AddForm() {
             <div
                 className="header">
                 <h1> Add Foods</h1>
-
             </div>
-
-            {/* < BackButton /> */}
 
             <div
                 className="formPanel">
