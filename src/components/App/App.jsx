@@ -6,6 +6,12 @@ import {
   Switch,
 } from 'react-router-dom';
 
+//MUI FONTS 
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
 import { useDispatch, useSelector } from 'react-redux';
 
 // import BackButton from '../BackButton/BackButton';
