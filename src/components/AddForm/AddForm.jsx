@@ -59,7 +59,7 @@ function AddForm() {
         console.log('new item', newItem);
     }
 
-
+//Add new item to the DB 
     const addItem = (newItem) => {
         //sagas
         dispatch({ type: 'POST_ITEM', payload: newItem });
@@ -68,9 +68,10 @@ function AddForm() {
         clearForm();
     }
 
+    //update item in the DB 
     const updateItem = (item) => {
         //sagas 
-        dispatch({ type: 'UPDATE_INGREDIENT', payload: item });
+        dispatch({ type: 'UPDATE_ITEM', payload: item });
         console.log('clicked, edit item');
     }
 

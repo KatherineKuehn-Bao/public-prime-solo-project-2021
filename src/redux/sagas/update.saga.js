@@ -1,9 +1,12 @@
-// worker Saga: will be fired on "FETCH_USER" actions
+
+import axios from 'axios';
+import { put, takeLatest } from 'redux-saga/effects';
+
 function* updateItem(action) {
     try {
         console.log('update item', action.payload);
         //point to the update router
-        yield axios.put ('/api/update', action.payload);
+        yield axios.put('/api/update', action.payload);
 
        
     } catch (error) {
