@@ -28,6 +28,7 @@ function IngredientsItem() {
         //sagas 
         dispatch({ type: 'UPDATE_ITEM', payload: ingredient });
         console.log('clicked, edit item', ingredient);
+        
     }
 
     //Complete and functional Delete 'DELETE_INGREDIENT'

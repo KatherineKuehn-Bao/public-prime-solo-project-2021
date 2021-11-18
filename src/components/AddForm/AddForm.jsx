@@ -83,7 +83,7 @@ function AddForm() {
         setNewItem({
             food_name: '',
             expiration_date: '',
-            status: '',
+            status: 'storage',
             food_type_id: '',
             location_id: ''
         })
