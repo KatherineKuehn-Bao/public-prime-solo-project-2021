@@ -7,6 +7,10 @@ import { useSelector } from 'react-redux';
 import Nav from '../Nav/Nav';
 import IngredientsList from '../IngredientsList/IngredientsList';
 
+//MUI IMPORT 
+import Button from '@mui/material/Button';
+// import Stack from '@mui/material/Stack';
+
 import './UserPage.css';
 
 function UserPage() {
@@ -38,7 +42,10 @@ function UserPage() {
     <div className="container">
 
       <IngredientsList />
-      <button onClick={viewMore}> View More </button>
+      <Button 
+      onClick={viewMore}
+      variant="contained"
+      > View More </Button>
 
       <p> and some charts and graphs down here </p>
       {/* <p>Your ID is: {user.id}</p> */}

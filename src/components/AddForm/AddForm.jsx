@@ -2,6 +2,11 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 
+//Install MUI 
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+
 // import BackButton from "../BackButton/BackButton";
 
 
@@ -155,14 +160,18 @@ function AddForm() {
 
                     </select>
 
-                    <button
-                        type="submit">
-                        Save </button>
+                    <Stack direction="column" spacing={2}>
+                        <Button
+                            type="submit"
+                            variant="contained">
+                            Save </Button>
 
-                    <button
-                        type="button"
-                        onClick={cancelClick}>
-                        Back to Home  </button>
+                        <Button
+                            type="button"
+                            onClick={cancelClick}
+                            variant="contained">
+                            Back to Home  </Button>
+                    </Stack>
                 </form>
 
 

@@ -65,12 +65,12 @@ function IngredientsItem() {
                 <TableRow key={ingredient.id}>
                     <TableCell> {ingredient.food_name} </TableCell>
                     <TableCell> </TableCell>
-                    <TableCell> <button> Consume </button></TableCell>
+                    <TableCell> <button> Trash </button></TableCell>
 
                     <TableCell>
                         <button
                             onClick={() => updateIngredient(ingredient)}>
-                            Edit
+                            Consume
                         </button>
                     </TableCell>
 
