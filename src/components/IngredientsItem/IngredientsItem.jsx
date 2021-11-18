@@ -1,6 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux';
 // import { useState } from 'react';
 
+//Add MUI IMPORTS 
+import * as React from 'react';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
 function IngredientsItem() {
 
@@ -23,12 +30,12 @@ function IngredientsItem() {
     //     console.log('mode', formMode);
     // }
 
- //update item in the DB -
+    //update item in the DB -
     const updateIngredient = (ingredient) => {
         //sagas 
         dispatch({ type: 'UPDATE_ITEM', payload: ingredient });
         console.log('clicked, edit item', ingredient);
-        
+
     }
 
     //Complete and functional Delete 'DELETE_INGREDIENT'
@@ -36,39 +43,51 @@ function IngredientsItem() {
         dispatch({ type: 'DELETE_INGREDIENT', payload: ingredient })
     }
 
-console.log('ingredients', ingredients);
+    console.log('ingredients', ingredients);
 
 
 
     let storedIngredients = ingredients.filter(ingredient => {
-       
-       console.log('ingredient status', ingredient.status);
+
+        console.log('ingredient status', ingredient.status);
         return ingredient.status === 'storage'
 
-    }); 
-  console.log('stored ingredients', storedIngredients);
+    });
+    console.log('stored ingredients', storedIngredients);
 
 
-// *******RETURN ************ //
+    // *******RETURN ************ //
     return (
         <>
-        
+
             {storedIngredients.map(ingredient =>
-           
-                <trow key={ingredient.id}>
-                    <td> {ingredient.food_name} </td>
-                    <td> </td>
-                    <td> <button> Consume </button></td>
-            
-                    <td> <button onClick={() => updateIngredient(ingredient)}> Edit </button></td>
+
+                <TableRow key={ingredient.id}>
+                    <TableCell> {ingredient.food_name} </TableCell>
+                    <TableCell> </TableCell>
+                    <TableCell> <button> Consume </button></TableCell>
+
+                    <TableCell>
+                        <button
+                            onClick={() => updateIngredient(ingredient)}>
+                            Edit
+                        </button>
+                    </TableCell>
 
                     {/* //Delete Button works and updates to DB */}
-                    <td> <button onClick={() => handleDelete(ingredient)}> Delete </button></td>
-                </trow>
-            
-            
+                    <TableCell>
+                        <button
+                            onClick={() => handleDelete(ingredient)}>
+                            Delete
+                        </button>
+                    </TableCell>
+                </TableRow>
+
+
             )}
-            
+
+
+
         </>
     )
 

@@ -1,22 +1,34 @@
 import { useSelector, useDispatch } from 'react-redux';
 import IngredientsItem from '../IngredientsItem/IngredientsItem';
 
+//import from MUI 
+import * as React from 'react';
+import TableContainer from '@mui/material/TableContainer';
+import Paper from '@mui/material/Paper';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+
+
+
+
+
 function IngredientsList() {
 
 
     return (
         <>
             <h1> What's in Stock </h1>
-            <div className="container">
-                <table>
-                    <tbody>
+            <TableContainer component={Paper}>
+                <Table>
+                    <TableBody>
 
+{/* Array of objects that are in storage  */}
                         <IngredientsItem />
-                    </tbody>
-                </table>
 
+                    </TableBody>
+                </Table>
 
-            </div>
+                </TableContainer>
         </>
     )
 
