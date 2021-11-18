@@ -51,22 +51,30 @@ function AddForm() {
     const handleSubmit = (event, newItem) => {
         event.preventDefault();
         addItem(newItem);
-        // if (mode === 'add'){
-        //         addItem(item);
-        // } else {
-        //     updateItem(item);
-        // }
+        if (mode === 'add') {
+            addItem(item);
+        } else {
+            updateItem(item);
+        }
         console.log('new item', newItem);
     }
+
+
     const addItem = (newItem) => {
         //sagas
         dispatch({ type: 'POST_ITEM', payload: newItem });
         console.log('clicked, added new item');
         //clear form
         clearForm();
-
     }
-    //WORKS 
+
+    const updateItem = (item) => {
+        //sagas 
+        dispatch({ type: 'UPDATE_INGREDIENT', payload: item });
+        console.log('clicked, edit item');
+    }
+
+    //WORKS - back to home 
     const cancelClick = (event) => {
         history.push('/user');
     }

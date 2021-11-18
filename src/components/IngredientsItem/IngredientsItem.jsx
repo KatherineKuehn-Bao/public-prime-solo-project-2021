@@ -20,6 +20,7 @@ function IngredientsItem() {
         setFormMode('edit');
         setEditId(ingredient.id);
         console.log('ingredient id' , ingredient.id);
+        console.log('mode', formMode);
     }
 
 

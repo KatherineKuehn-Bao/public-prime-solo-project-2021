@@ -11,6 +11,9 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 //added type router 
 const typeRouter = require('./routes/type.router');
+//added update router 
+const updateRouter = require('./routes/update.router');
+const { application } = require('express');
 
 
 
@@ -30,6 +33,8 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 //add a type router 
 app.use('/api/type', typeRouter);
+//add update router 
+application.use('/api/update', updateRouter);
 
 // Serve static files
 app.use(express.static('build'));
