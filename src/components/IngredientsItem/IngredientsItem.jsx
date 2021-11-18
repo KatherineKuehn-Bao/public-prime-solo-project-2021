@@ -35,23 +35,39 @@ function IngredientsItem() {
         dispatch({ type: 'DELETE_INGREDIENT', payload: ingredient })
     }
 
+console.log('ingredients', ingredients);
+
+
+
+    let storedIngredients = ingredients.filter(ingredient => {
+       
+       console.log('ingredient status', ingredient.status);
+        return ingredient.status === 'storage'
+
+    }); 
+  console.log('stored ingredients', storedIngredients);
+
 
 // *******RETURN ************ //
     return (
         <>
-            {ingredients.map(ingredient =>
+        
+            {storedIngredients.map(ingredient =>
+           
                 <trow key={ingredient.id}>
                     <td> {ingredient.food_name} </td>
                     <td> </td>
                     <td> <button> Consume </button></td>
-
+            
                     <td> <button onClick={() => updateIngredient(ingredient)}> Edit </button></td>
 
                     {/* //Delete Button works and updates to DB */}
                     <td> <button onClick={() => handleDelete(ingredient)}> Delete </button></td>
                 </trow>
-
+            
+            
             )}
+            
         </>
     )
 
