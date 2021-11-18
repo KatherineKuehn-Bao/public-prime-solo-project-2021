@@ -8,12 +8,13 @@ function* updateItem(action) {
         //point to the update router - send over ingredient
         yield axios.put('/api/update', action.payload);
 
-       
     } catch (error) {
         console.log('Error in PUT', error);
         
     }
 }
+
+
 
 //listen for UPDATE_ITEM dispatch 
 function* updateItemSaga() {

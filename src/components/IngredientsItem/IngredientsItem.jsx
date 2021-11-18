@@ -26,7 +26,7 @@ function IngredientsItem() {
  //update item in the DB -
     const updateIngredient = (ingredient) => {
         //sagas 
-        dispatch({ type: 'UPDATE_ITEM', payload: ingredient.id });
+        dispatch({ type: 'UPDATE_ITEM', payload: ingredient });
         console.log('clicked, edit item', ingredient);
     }
 

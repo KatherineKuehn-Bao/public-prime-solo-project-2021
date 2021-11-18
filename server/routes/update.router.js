@@ -10,12 +10,14 @@ router.get('/', (req, res) => {
 });
 
 //update consumed item status to 'consumed'
-router.put('/api/update', (req, res) => {
+router.put('/', (req, res) => {
+    
+    let id = req.body.id;
     let queryText = `
     UPDATE ingredients 
     SET status='consumed' WHERE id=$1;
     `;
-    pool.query(queryText, [ingredient.id])
+    pool.query(queryText, [id])
     .then((result) => {
         res.sendStatus(200);
     })
