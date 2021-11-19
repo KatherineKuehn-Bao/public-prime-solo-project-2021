@@ -37,15 +37,20 @@ function UserPage() {
 
   return (<>
 
-    <h2 className="header">Welcome, {user.username}!</h2>
+    <h1 className="header">Welcome, {user.username}!</h1>
 
     <div className="container">
+    <h2> What's in Stock </h2>
 
-      <IngredientsList />
-      <Button 
-      onClick={viewMore}
-      variant="contained"
-      > View More </Button>
+      <div className="top5">
+        <IngredientsList />
+       
+      </div>
+
+      <Button
+          onClick={viewMore}
+          variant="contained"
+        > View More </Button>
 
       <p> and some charts and graphs down here </p>
       {/* <p>Your ID is: {user.id}</p> */}

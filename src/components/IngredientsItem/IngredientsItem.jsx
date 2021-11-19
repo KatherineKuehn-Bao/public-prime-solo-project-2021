@@ -8,6 +8,7 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
 
 function IngredientsItem() {
 
@@ -46,7 +47,7 @@ function IngredientsItem() {
     console.log('ingredients', ingredients);
 
 
-
+    //Get the ingredients that are stored for the table 
     let storedIngredients = ingredients.filter(ingredient => {
 
         console.log('ingredient status', ingredient.status);
@@ -68,18 +69,23 @@ function IngredientsItem() {
                     {/* <TableCell> <button> Trash </button></TableCell> */}
 
                     <TableCell>
-                        <button
-                            onClick={() => updateIngredient(ingredient)}>
+                        <Button
+                            variant="contained"
+                            color="success"
+                            onClick={() => updateIngredient(ingredient)}
+                        >
                             Consume
-                        </button>
+                        </Button>
                     </TableCell>
 
                     {/* //Delete Button works and updates to DB */}
                     <TableCell>
-                        <button
+                        <Button
+                            variant="contained"
+                            color="error"
                             onClick={() => handleDelete(ingredient)}>
                             Delete
-                        </button>
+                        </Button>
                     </TableCell>
                 </TableRow>
 

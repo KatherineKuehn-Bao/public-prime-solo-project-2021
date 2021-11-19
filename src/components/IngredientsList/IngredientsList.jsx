@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux';
+// import { useSelector, useDispatch } from 'react-redux';
 import IngredientsItem from '../IngredientsItem/IngredientsItem';
 
 //import from MUI 
@@ -10,14 +10,11 @@ import TableBody from '@mui/material/TableBody';
 
 
 
-
-
 function IngredientsList() {
 
 
     return (
         <>
-            <h1> What's in Stock </h1>
             <TableContainer component={Paper}>
                 <Table>
                     <TableBody>
