@@ -10,21 +10,39 @@ const LocationChart = () => {
     // Get ingredients from the store
     const ingredients = useSelector(store => store.ingredients);
 
-    let location = ingredients.map(ingredient =>
-        ingredient.location_id);
 
-    console.log('location', location);
+    //create DATA from the DAtabase 
+    let fridge = [];
+    let freezer = [];
+    let pantry = [];
+    let fresh = [];
+
+
+    for (let ingredient = 0; ingredient < ingredients.length; ingredient++) {
+        if (ingredient.location_id === 'fridge') {
+            fridge.push(ingredient)
+        }
+    
+    }
+    console.log('fridge', fridge);
+    
+
+    //Not quite what we need 
+    // let location = ingredients.map(ingredient =>
+    //     ingredient.location_id);
+
+    // console.log('location', location);
 
 
     return (
         <div >
             <Doughnut
                 data={{
-                    labels: ['Fresh', 'Fridge', 'Freezer', 'Pantry'],
+                    labels: ['Fridge', 'Freezer', 'Pantry', ' Fresh'],
                     datasets: [
                         {
                             label: 'types of foods',
-                            data: [12, 19, 3, 5],
+                            data: [fridge, freezer, pantry, fresh],
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
                                 'rgba(54, 162, 235, 0.2)',

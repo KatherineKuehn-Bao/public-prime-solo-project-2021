@@ -35,7 +35,7 @@ function IngredientsItem() {
     const updateIngredient = (ingredient) => {
         //sagas 
         dispatch({ type: 'UPDATE_ITEM', payload: ingredient });
-        console.log('clicked, edit item', ingredient);
+        // console.log('clicked, edit item', ingredient);
 
     }
 
@@ -44,17 +44,17 @@ function IngredientsItem() {
         dispatch({ type: 'DELETE_INGREDIENT', payload: ingredient })
     }
 
-    console.log('ingredients', ingredients);
+    // console.log('ingredients', ingredients);
 
 
     //Get the ingredients that are stored for the table 
     let storedIngredients = ingredients.filter(ingredient => {
 
-        console.log('ingredient status', ingredient.status);
+        // console.log('ingredient status', ingredient.status);
         return ingredient.status === 'storage'
 
     });
-    console.log('stored ingredients', storedIngredients);
+    // console.log('stored ingredients', storedIngredients);
 
 
     // *******RETURN ************ //
