@@ -17,8 +17,8 @@ const LocationChart = () => {
     let pantry = [];
     let fresh = [];
 
-
-    for (let ingredient = 0; ingredient < ingredients.length; ingredient++) {
+    for (let ingredient of ingredients){
+    // for (let ingredient = 0; ingredient < ingredients.length; ingredient++) {
 
         if (ingredient.location_id === 1) {
             fridge.push(ingredient)

@@ -6,6 +6,7 @@ import { useHistory } from 'react-router';
 import { useSelector } from 'react-redux';
 import Nav from '../Nav/Nav';
 import IngredientsList from '../IngredientsList/IngredientsList';
+import LocationChart from '../LocationChart/LocationChart';
 
 //MUI IMPORT 
 import Button from '@mui/material/Button';
@@ -53,6 +54,7 @@ function UserPage() {
         > View More </Button>
 
       <p> and some charts and graphs down here </p>
+      <LocationChart/>
       {/* <p>Your ID is: {user.id}</p> */}
       {/* <LogOutButton className="btn" /> */}
 
