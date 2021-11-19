@@ -45,7 +45,7 @@ const LocationChart = () => {
                     datasets: [
                         {
                             label: 'types of foods',
-                            data: [fridge, freezer, pantry, fresh],
+                            data: [fridge.length, freezer.length, pantry.length, fresh.length],
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
                                 'rgba(54, 162, 235, 0.2)',

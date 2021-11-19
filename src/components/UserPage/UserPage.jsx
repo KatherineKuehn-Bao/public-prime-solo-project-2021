@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import Nav from '../Nav/Nav';
 import IngredientsList from '../IngredientsList/IngredientsList';
 import LocationChart from '../LocationChart/LocationChart';
+import TypeBarChart from '../TypeBarChart/TypeBarChart';
 
 //MUI IMPORT 
 import Button from '@mui/material/Button';

@@ -5,6 +5,7 @@ import Nav from '../Nav/Nav';
 
 //Charts 
 import LocationChart from '../LocationChart/LocationChart';
+import TypeBarChart from '../TypeBarChart/TypeBarChart';
 
 function Figures() {
   
@@ -22,7 +23,10 @@ function Figures() {
     <div
       className="container">
         <LocationChart/>
+        
       <p> charts and graphs will populate this page </p>
+
+      <TypeBarChart/>
     </div>
 
     <Nav />
