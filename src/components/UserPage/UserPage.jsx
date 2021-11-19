@@ -53,7 +53,7 @@ function UserPage() {
 
 
     </div>
-    {/* Make this guy sticky  */}
+    {/* Make this NAV BAR  sticky  */}
     <Nav />
   </>
   );
