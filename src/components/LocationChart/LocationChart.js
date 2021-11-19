@@ -5,10 +5,17 @@ import { useSelector } from 'react-redux';
 
 
 
+const LocationChart = () => {
+
+    // Get ingredients from the store
+    const ingredients = useSelector(store => store.ingredients);
+
+    let location = ingredients.map(ingredient =>
+        ingredient.location_id);
+
+    console.log('location', location);
 
 
-
-const BarChart = () => {
     return (
         <div >
             <Doughnut
@@ -54,4 +61,4 @@ const BarChart = () => {
         </div>
     )
 }
-export default BarChart;
+export default LocationChart;

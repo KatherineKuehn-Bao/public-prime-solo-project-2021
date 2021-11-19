@@ -2,9 +2,13 @@ import React from 'react';
 
 import './Figures.css';
 import Nav from '../Nav/Nav';
-// import BackButton from '../BackButton/BackButton';
+
+//Charts 
+import LocationChart from '../LocationChart/LocationChart';
 
 function Figures() {
+  
+  
   return (<>
 
     <div
@@ -17,6 +21,7 @@ function Figures() {
 
     <div
       className="container">
+        <LocationChart/>
       <p> charts and graphs will populate this page </p>
     </div>
 
