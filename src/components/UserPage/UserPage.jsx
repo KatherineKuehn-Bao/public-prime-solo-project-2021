@@ -54,7 +54,7 @@ function UserPage() {
           variant="contained"
         > View More </Button>
 
-      <p> and some charts and graphs down here </p>
+ <h3> Charts and Graphs </h3>
       <LocationChart/>
       {/* <p>Your ID is: {user.id}</p> */}
       {/* <LogOutButton className="btn" /> */}
