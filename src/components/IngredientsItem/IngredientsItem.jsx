@@ -65,7 +65,7 @@ function IngredientsItem() {
                 <TableRow key={ingredient.id}>
                     <TableCell> {ingredient.food_name} </TableCell>
                     <TableCell> </TableCell>
-                    <TableCell> <button> Trash </button></TableCell>
+                    {/* <TableCell> <button> Trash </button></TableCell> */}
 
                     <TableCell>
                         <button

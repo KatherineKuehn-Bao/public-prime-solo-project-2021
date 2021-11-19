@@ -4,6 +4,11 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
 
+//MUI  -- not used 
+// import HomeIcon from '@mui/icons-material/Home';
+
+
+
 function Nav() {
   const user = useSelector((store) => store.user);
 
@@ -37,7 +42,7 @@ function Nav() {
             </Link>
 
             <Link className="navLink" to="/figures">
-             Figures 
+              Figures
             </Link>
 
             <LogOutButton className="navLink" />
@@ -49,3 +54,7 @@ function Nav() {
 }
 
 export default Nav;
+
+
+
+
