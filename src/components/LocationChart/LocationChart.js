@@ -3,12 +3,12 @@ import { Doughnut } from 'react-chartjs-2';
 import { useSelector } from 'react-redux';
 
 
-
-
 const LocationChart = () => {
+
 
     // Get ingredients from the store
     const ingredients = useSelector(store => store.ingredients);
+    console.log('ingredients', ingredients);
 
 
     //create DATA from the DAtabase 
@@ -19,20 +19,23 @@ const LocationChart = () => {
 
 
     for (let ingredient = 0; ingredient < ingredients.length; ingredient++) {
-        if (ingredient.location_id === 'fridge') {
+
+        if (ingredient.location_id === 1) {
             fridge.push(ingredient)
-        }
+        } else if (ingredient.location_id === 2){
+            freezer.push(ingredient)
+        } else if (ingredient.location_id === 3){
+            pantry.push(ingredient)
+        } else if (ingredient.location_id === 4){
+            fresh.push(ingredient)
+        } 
+    }// end loop 
+
+    //Log the results 
+    console.log('locations ', fridge, freezer, pantry, fresh );
+    console.log('ingredients', ingredients);
     
-    }
-    console.log('fridge', fridge);
     
-
-    //Not quite what we need 
-    // let location = ingredients.map(ingredient =>
-    //     ingredient.location_id);
-
-    // console.log('location', location);
-
 
     return (
         <div >
