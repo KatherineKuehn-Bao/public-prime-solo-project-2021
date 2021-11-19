@@ -13,6 +13,14 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import TextField from '@mui/material/TextField';
+
+
+//date MUI 
+// import TextField from '@mui/material/TextField';
+// import AdapterDateFns from '@mui/lab/AdapterDateFns';
+// import LocalizationProvider from '@mui/lab/LocalizationProvider';
+// import DatePicker from '@mui/lab/DatePicker';
 
 
 
@@ -110,78 +118,90 @@ function AddForm() {
 
             <Box sx={{ minWidth: 120 }}>
 
-                <FormControl full width>
-                    {/* className="formPanel" */}
+                {/* <FormControl full width> */}
+                {/* className="formPanel" */}
 
 
-                    <form onSubmit={(event) => handleSubmit(event, newItem)}>
-                        <input
-                            placeholder="food_name"
-                            type="text"
-                            value={newItem.food_name}
-                            onChange={(event) => handlePropertyChange(event, "food_name")}
-                        />
-                        <input
-                            placeholder="expiration_date"
-                            type="date"
+                <form onSubmit={(event) => handleSubmit(event, newItem)}>
+                <InputLabel> Name of Food </InputLabel>
+
+                    <TextField
+                        variant="outlined"
+                        label="type food here"
+                        type="text"
+                        value={newItem.food_name}
+                        onChange={(event) => handlePropertyChange(event, "food_name")}
+                    />
+
+                    {/* <LocalizationProvider dateAdapter={AdapterDateFns}>
+                        <DatePicker
+                            label="Expiration Date"
                             value={newItem.expiration_date}
                             onChange={(event) => handlePropertyChange(event, 'expiration_date')}
+                            renderInput={(params) => <TextField {...params} />}
                         />
+                    </LocalizationProvider> */}
+                    <input
+                        placeholder="expiration_date"
+                        type="date"
+                        value={newItem.expiration_date}
+                        onChange={(event) => handlePropertyChange(event, 'expiration_date')}
+                    />
 
 
-                        {/* Types Dropdown */}
-                        <InputLabel> Type of Food </InputLabel>
-                        <Select
-                            label="type"
-                            placeholder="types"
-                            value={newItem.food_type_id}
-                            onChange={(event) => handlePropertyChange(event, 'food_type_id')}>
-                        
-
-                            {type.map((type) => {
-                                return (
-                                    <MenuItem key={type.id} value={type.id}>
-                                        {type.type}
-                                    </MenuItem>
-                                );
-                            })}
-                        </Select>
+                    {/* Types Dropdown */}
+                    <InputLabel> Type of Food </InputLabel>
+                    <Select
+                        label="type"
+                        value={newItem.food_type_id}
+                        onChange={(event) => handlePropertyChange(event, 'food_type_id')}>
 
 
-                        {/* Location dropdown */}
-                        <select
-                            placeholder="location_id"
-                            value={newItem.location_id}
-                            onChange={(event) => handlePropertyChange(event, 'location_id')}
-                        >
-                            <option
-                                disabled="disabled">choose a location</option>
+                        {type.map((type) => {
+                            return (
+                                <MenuItem key={type.id} value={type.id}>
+                                    {type.type}
+                                </MenuItem>
+                            );
+                        })}
+                    </Select>
 
-                            {location.map((location) => {
-                                return (
-                                    <option key={location.id} value={location.id}>
-                                        {location.location}
-                                    </option>
-                                );
-                            })}
 
-                        </select>
+                    {/* Location dropdown */}
+                    <InputLabel> Location of Food </InputLabel>
 
-                        <Stack direction="column" spacing={2}>
-                            <Button
-                                type="submit"
-                                variant="contained">
-                                Save </Button>
+                    <Select
+                        label="location"
+                        placeholder="location_id"
+                        value={newItem.location_id}
+                        onChange={(event) => handlePropertyChange(event, 'location_id')}
+                    >
 
-                            <Button
-                                type="button"
-                                onClick={cancelClick}
-                                variant="contained">
-                                Back to Home  </Button>
-                        </Stack>
-                    </form>
+                        {location.map((location) => {
+                            return (
+                                <MenuItem key={location.id} value={location.id}>
+                                    {location.location}
+                                </MenuItem>
+                            );
+                        })}
 
-                </FormControl>
+                    </Select>
+
+                    <Stack direction="column" spacing={2}>
+                        <Button
+                            type="submit"
+                            variant="contained">
+                            Save </Button>
+
+                        <Button
+                            type="button"
+                            onClick={cancelClick}
+                            variant="contained">
+                            Back to Home  </Button>
+                    </Stack>
+                </form>
+
+                {/* </FormControl> */}
             </Box>
 
         </>
