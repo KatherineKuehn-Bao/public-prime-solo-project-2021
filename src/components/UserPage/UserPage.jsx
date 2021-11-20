@@ -48,9 +48,9 @@ function UserPage() {
         <IngredientsList />
 
       </div>
-      <div >
+      <div   className="ViewMore">
         <Button
-          className="ViewMore"
+        
           onClick={viewMore}
           variant="contained"
         > View More </Button>
