@@ -15,6 +15,12 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 
+//snackbar MUi 
+// import Snackbar from '@mui/material/Snackbar';
+// import IconButton from '@mui/material/IconButton';
+// import CloseIcon from '@mui/icons-material/Close';
+
+
 
 //date MUI 
 // import TextField from '@mui/material/TextField';
@@ -63,6 +69,8 @@ function AddForm() {
 
     //ADD -- ONLY ADD 
     const handleSubmit = (event, newItem) => {
+        //ADD SNACKBAR 
+        // setOpen(true);
         event.preventDefault();
         addItem(newItem);
         // if (mode === 'add') {
@@ -106,6 +114,33 @@ function AddForm() {
         })
     }
 
+    //MUI SNACKBAr
+    // const action = (
+    //     <React.Fragment>
+    //       <Button color="secondary" size="small" onClick={handleClose}>
+    //         UNDO
+    //       </Button>
+    //       <IconButton
+    //         size="small"
+    //         aria-label="close"
+    //         color="inherit"
+    //         onClick={handleClose}
+    //       >
+    //         <CloseIcon fontSize="small" />
+    //       </IconButton>
+    //     </React.Fragment>
+    //   );
+
+      
+      //Close MUI snackbar 
+
+    //   const handleClose = (event, reason) => {
+    //     if (reason === 'clickaway') {
+    //       return;
+    //     }
+    
+    //     setOpen(false);
+    //   };
 
     return (
         <>

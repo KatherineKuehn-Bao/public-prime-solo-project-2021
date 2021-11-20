@@ -42,6 +42,10 @@ Button
   outline: 0;
   cursor: pointer;
 }
+button{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
 
 .btn_sizeMin {
   min-height: 50px;
