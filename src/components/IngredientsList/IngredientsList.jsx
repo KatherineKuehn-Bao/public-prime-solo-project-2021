@@ -13,10 +13,12 @@ function IngredientsList() {
 
     return (
         <>
-            <TableContainer component={Paper}>
-               
-                        {/* Array of objects that are in storage  */}
-                        <IngredientsItem />
+            <TableContainer
+                className="tablecontainer"
+                component={Paper}>
+
+                {/* Array of objects that are in storage  */}
+                <IngredientsItem />
 
             </TableContainer>
         </>
