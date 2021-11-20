@@ -27,6 +27,7 @@ import Inventory from '../Inventory/Inventory';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+// import FunFile from '../FunFile';
 
 import './App.css';
 

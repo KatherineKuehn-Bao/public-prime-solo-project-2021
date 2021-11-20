@@ -191,4 +191,11 @@ form {
 
 td {
   background-color: rgba(6, 64, 82, 0.55);
+  text-align: center;
 }
+
+thead {
+  background-color: grey;
+  text-align: center;
+}
+

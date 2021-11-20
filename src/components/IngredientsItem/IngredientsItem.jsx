@@ -4,11 +4,14 @@ import { useSelector, useDispatch } from 'react-redux';
 //Add MUI IMPORTS 
 import * as React from 'react';
 import TableBody from '@mui/material/TableBody';
+import Table from '@mui/material/Table';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 function IngredientsItem() {
 
@@ -60,42 +63,57 @@ function IngredientsItem() {
     // *******RETURN ************ //
     return (
         <>
+            <Table>
 
-            {storedIngredients.map(ingredient =>
+                <TableHead>
+                    <TableRow>
+                        <TableCell>Ingredients</TableCell>
+                        <TableCell> </TableCell>
+                        <TableCell>Consume</TableCell>
+                        <TableCell>Trash</TableCell>
 
-                <TableRow key={ingredient.id}>
-                    <TableCell> {ingredient.food_name} </TableCell>
-                    <TableCell> </TableCell>
-                    {/* <TableCell> <button> Trash </button></TableCell> */}
+                    </TableRow>
+                </TableHead>
 
-                    <TableCell>
-                        <Button
-                            variant="contained"
-                            color="success"
-                            onClick={() => updateIngredient(ingredient)}
-                        >
-                            Consume
-                        </Button>
-                    </TableCell>
+                <TableBody>
+                    {storedIngredients.map(ingredient =>
 
-                    {/* //Delete Button works and updates to DB */}
-                    <TableCell>
-                        <Button
-                            variant="contained"
-                            color="error"
-                            onClick={() => handleDelete(ingredient)}>
-                            Delete
-                        </Button>
-                    </TableCell>
-                </TableRow>
+                        <TableRow key={ingredient.id}>
+                            <TableCell> {ingredient.food_name} </TableCell>
+                            <TableCell> </TableCell>
+                            {/* <TableCell> <button> Trash </button></TableCell> */}
+
+                            <TableCell>
+                                <Button
+                                    className="consumed"
+                                    variant="contained"
+                                    color="success"
+                                    onClick={() => updateIngredient(ingredient)}
+                                >
+                                    Consume
+                                </Button>
+                            </TableCell>
+
+                            {/* //Delete Button works and updates to DB */}
+                            <TableCell>
+                                <Button
+                                    className="Delete"
+                                    variant="contained"
+                                    color="error"
+                                    onClick={() => handleDelete(ingredient)}>
+                                    Delete
+                                </Button>
+                            </TableCell>
+                        </TableRow>
+
+                    )}
+                </TableBody>
+</Table>
 
 
-            )}
 
-
-
-        </>
-    )
+            </>
+            )
 
 }
-export default IngredientsItem;
+            export default IngredientsItem;

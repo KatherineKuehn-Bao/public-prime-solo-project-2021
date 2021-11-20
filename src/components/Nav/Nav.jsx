@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
+// import FunFile from '../FunFile/FunFile.js';
 
 //MUI  -- not used 
 // import HomeIcon from '@mui/icons-material/Home';
@@ -29,6 +30,7 @@ function Nav() {
         {/* If a user is logged in, show these links */}
         {user.id && (
           <>
+          <div className="stickyNav">
             <Link className="navLink" to="/user">
               Home
             </Link>
@@ -46,6 +48,7 @@ function Nav() {
             </Link>
 
             <LogOutButton className="navLink" />
+            </div>
           </>
         )}
       </div>
