@@ -10,19 +10,11 @@ import '../App/App.css';
 function Inventory() {
     return (<>
 
-        {/* //inherited from UserPage.css */}
-        <div
-            className="header">
+        <div>
             <h1>Inventory Page </h1>
-
         </div>
-
-        {/* < BackButton /> */}
-
-
+        
         <IngredientsList />
-       
-
         <Nav />
     </>
     );

@@ -27,7 +27,8 @@ function LoginForm() {
     // history.push('/userPage');
   }; // end login
 
-  return (
+  return (<>
+  <h1> In Stock</h1>
     <form className="formPanel" onSubmit={login}>
       <h2>Login</h2>
       {errors.loginMessage && (
@@ -63,7 +64,7 @@ function LoginForm() {
         <input className="btn" type="submit" name="submit" value="Log In" />
       </div>
     </form>
-  );
+ </> );
 }
 
 export default LoginForm;

@@ -39,23 +39,25 @@ function UserPage() {
 
   return (<>
 
-    <h1 className="header">Welcome, {user.username}!</h1>
+    <h1>Welcome, {user.username}!</h1>
 
     <div className="container">
-    <h2> What's in Stock </h2>
+      <h2> What's in Stock </h2>
 
       <div className="top5">
         <IngredientsList />
-       
-      </div>
 
-      <Button
+      </div>
+      <div >
+        <Button
+          className="ViewMore"
           onClick={viewMore}
           variant="contained"
         > View More </Button>
+      </div>
 
- <h3> Charts and Graphs </h3>
-      <LocationChart/>
+      <h3> Charts and Graphs </h3>
+      <LocationChart />
       {/* <p>Your ID is: {user.id}</p> */}
       {/* <LogOutButton className="btn" /> */}
 
