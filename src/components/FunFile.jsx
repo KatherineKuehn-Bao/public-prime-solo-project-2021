@@ -13,9 +13,10 @@ import { useHistory } from 'react-router-dom';
 
 
 function FunFile() {
-  //set Value
+  //set Value & intialize hooks 
   const [navValue, setNavValue] = useState(``);
   const history = useHistory();
+  
   
   const handleChange = (event, newValue) => {
     console.log(`this is newValue`, newValue);
@@ -48,17 +49,20 @@ function FunFile() {
         value="/user"
         label="Home" 
         icon={<HomeIcon />} />
+
         <BottomNavigationAction
         value="/inventory" 
         label="Inventory" 
         icon={<ArchiveIcon />} />
+
         <BottomNavigationAction 
         value="/figures"
         label="Charts" 
         icon={<DonutLargeIcon />} />
+
         <BottomNavigationAction 
         value="/settings"
-        label="Settings" icon={<LogoutIcon />} />
+        label="Logout" icon={<LogoutIcon />} />
 
       </BottomNavigation>
     </Paper>

@@ -27,6 +27,7 @@ import Inventory from '../Inventory/Inventory';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import Settings from '../Settings/Settings';
 // import FunFile from '../FunFile';
 
 import './App.css';
@@ -81,6 +82,13 @@ function App() {
           >
             <AddForm />
           </ProtectedRoute>
+
+          {/* <ProtectedRoute
+            exact
+            path="/settings"
+          >
+            <Settings />
+          </ProtectedRoute> */}
 
 
           <Route
