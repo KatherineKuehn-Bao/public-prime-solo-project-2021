@@ -68,7 +68,7 @@ console.log('type', fruit, veggies, legumes, grains, processed, nutsSeeds);
         // In this case, we are setting the border of each horizontal bar to be 2px wide
         elements: {
             bar: {
-                borderWidth: 2,
+                borderWidth: 5,
             },
         },
         responsive: true,
