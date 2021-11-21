@@ -199,5 +199,15 @@ thead {
   text-align: center;
 }
 
-.tablecontainer {}
+
+/* //Table sized down until sticky bottom nav  */
+.tablecontainer {
+  text-align: center;
+  height: 500px;
+ overflow-y: scroll; 
+ padding-left: 10px;
+ padding-right: 10px;
+ padding-top: 10px;
+
+}
 
