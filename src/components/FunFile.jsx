@@ -17,7 +17,7 @@ function FunFile() {
   const [navValue, setNavValue] = useState(``);
   const history = useHistory();
   
-  
+
   const handleChange = (event, newValue) => {
     console.log(`this is newValue`, newValue);
     setNavValue(newValue);
@@ -25,14 +25,15 @@ function FunFile() {
         console.log(`log out pop up `);
         setOpen(true);
     }
-    else if (newValue === `settings`) {
-        console.log(`settings popup`);
-        setOpen(true);
+    // else if (newValue === `settings`) {
+    //     console.log(`settings popup`);
+    //     setOpen(true);
     }
     else {
         history.push(newValue);
     }
 }
+
 
 
 
@@ -61,7 +62,7 @@ function FunFile() {
         icon={<DonutLargeIcon />} />
 
         <BottomNavigationAction 
-        value="/settings"
+        value="logout"
         label="Logout" icon={<LogoutIcon />} />
 
       </BottomNavigation>
