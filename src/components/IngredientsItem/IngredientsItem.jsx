@@ -12,6 +12,9 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 
+//button icons 
+import { IconButton, Edit } from '@mui/material';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 function IngredientsItem() {
 
@@ -84,14 +87,26 @@ function IngredientsItem() {
                             {/* <TableCell> <button> Trash </button></TableCell> */}
 
                             <TableCell>
-                                <Button
+                                <CheckCircleIcon
+                                    className="consumed"
+                                    variant="contained"
+                                    color="success"
+                                    onClick={() => updateIngredient(ingredient)}>
+                                    <IconButton style={{ padding: 8 }}
+                                    >
+                                        Consume
+                                        {/* <Edit fontSize="small" /> */}
+                                    </IconButton>
+                                </CheckCircleIcon>
+
+                                {/* <Button
                                     className="consumed"
                                     variant="contained"
                                     color="success"
                                     onClick={() => updateIngredient(ingredient)}
                                 >
                                     Consume
-                                </Button>
+                                </Button> */}
                             </TableCell>
 
                             {/* //Delete Button works and updates to DB */}
@@ -108,12 +123,12 @@ function IngredientsItem() {
 
                     )}
                 </TableBody>
-</Table>
+            </Table>
 
 
 
-            </>
-            )
+        </>
+    )
 
 }
-            export default IngredientsItem;
+export default IngredientsItem;
