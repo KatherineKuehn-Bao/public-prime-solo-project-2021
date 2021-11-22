@@ -22,10 +22,9 @@ function EditForm(props) {
     const history = useHistory();
     const editIngredient = useSelector((store) => store.editIngredientReducer);
 
-    //get type and location 
+    //get type and location for dropdown arrays 
     const type = useSelector(store => store.type);
     const location = useSelector(store => store.location);
-
 
 
     //check if changing as typing 
@@ -41,27 +40,33 @@ function EditForm(props) {
         event.preventDefault();
         dispatch({
             type: 'SET_EDIT_ITEM',
-            payload: property
+            payload: editIngredient
+        })
+        dispatch({
+            type: 'CLEAR_EDIT',
+
         })
 
     }
 
-    //CANCEL
+    //CANCEL- works 
     const cancelClick = (event) => {
         alert('nothing was saved');
         history.push('/user');
     }
 
- console.log('food_name', editIngredient.food_name);
+
+    console.log('food_name', editIngredient);
+    console.log('type', type )
 
 
     return (
-<>
+        <>
             <div className=".container">
                 <div>
                     <h1> Edit Foods </h1>
                 </div>
-                
+
 
                 <div className="form">
                     <Box sx={{ minWidth: 120 }}>
@@ -96,7 +101,7 @@ function EditForm(props) {
                                 onChange={(event) => handleChange(event, 'expiration_date')}
                             />
 
-
+{/* **********NEEDS WORK  */}
                             {/* Types Dropdown */}
                             <InputLabel> Type of Food </InputLabel>
                             <Select
@@ -114,7 +119,7 @@ function EditForm(props) {
                                 })}
                             </Select>
 
-
+{/* **************NEEDS WORK  */}
                             {/* Location dropdown */}
                             <InputLabel> Location of Food </InputLabel>
 
@@ -152,7 +157,7 @@ function EditForm(props) {
                         {/* </FormControl> */}
                     </Box>
                 </div>
-            </div> 
+            </div>
         </>
 
     );

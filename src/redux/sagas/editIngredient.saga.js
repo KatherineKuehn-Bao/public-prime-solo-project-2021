@@ -15,11 +15,22 @@ function* editIngredient(action) {
     }
 }
 
+function* clearEdit(action){
+    try{
+        console.log('clear edit', action.payload);
+    }
+    catch(error) {
+        console.log('error in clear', error);
+        
+    }
+}
+
 
 
 //listen for UPDATE_ITEM dispatch 
 function* editIngredientSaga() {
     yield takeLatest('SET_EDIT_ITEM', editIngredient);
+    yield takeLatest('CLEAR_EDIT', clearEdit);
 }
 
 export default editIngredientSaga;
