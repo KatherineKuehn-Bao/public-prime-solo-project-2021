@@ -1,4 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router';
+
 // import { useState } from 'react';
 
 //Add MUI IMPORTS 
@@ -16,6 +18,7 @@ import { IconButton, Edit } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import BackspaceIcon from '@mui/icons-material/Backspace';
 import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 
 
 function IngredientsItem() {
@@ -30,6 +33,7 @@ function IngredientsItem() {
 
     //intialize hook 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     //EDIT Button 
     // const editIngredient = (ingredient) => {
@@ -50,6 +54,10 @@ function IngredientsItem() {
     //Complete and functional Delete 'DELETE_INGREDIENT'
     const handleDelete = (ingredient) => {
         dispatch({ type: 'DELETE_INGREDIENT', payload: ingredient })
+    }
+
+    const handleEdit = () => {
+        history.push(`/edit`);
     }
 
     //Get the ingredients that are stored for the table 
@@ -87,8 +95,8 @@ const locationClass = (ingredient) => {
                     <TableRow>
                         <TableCell>Ingredients</TableCell>
                         <TableCell> </TableCell>
-                        <TableCell>Consume</TableCell>
-                        {/* <TableCell>Trash</TableCell> */}
+                        <TableCell>Eat</TableCell>
+                        <TableCell>Edit</TableCell>
                         <TableCell>Delete</TableCell>
                     </TableRow>
                 </TableHead>
@@ -107,12 +115,12 @@ const locationClass = (ingredient) => {
                             {/* Consumed food gets updated on DB */}
                             <TableCell>
                                 <CheckCircleIcon
-                                    className="consumed"
+                                    className="eat"
                                     variant="contained"
                                     color="success"
                                     onClick={() => updateIngredient(ingredient)}>
                                     <IconButton>
-                                        Consume
+                                        Eat
                                         {/* <Edit fontSize="small" /> */}
                                     </IconButton>
                                 </CheckCircleIcon>
@@ -120,18 +128,19 @@ const locationClass = (ingredient) => {
 
                             {/* //NEED TO ADD LOGIC STILL  */}
                             {/* Update thrown away foods on Database */}
-                            {/* <TableCell>
-                                <DeleteIcon
-                                    className="trash"
+                            <TableCell>
+                                <EditIcon
+                                    className="edit"
                                     variant="contained"
                                     color="info"
-                                    onClick={() => updateIngredient(ingredient)}>
+                                    onClick={handleEdit}>
+                                    {/* // onClick={() => updateIngredient(ingredient)}> */}
                                     <IconButton>
-                                        Trash
+                                        Edit
                                         {/* <Edit fontSize="small" /> */}
-                                    {/* </IconButton> */}
-                                {/* </DeleteIcon> */}
-                            {/* </TableCell> */}
+                                    </IconButton>
+                                </EditIcon>
+                             </TableCell>
 
 
 

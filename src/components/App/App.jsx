@@ -28,6 +28,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import Settings from '../Settings/Settings';
+import EditForm from '../EditForm/EditForm';
 // import FunFile from '../FunFile';
 
 import './App.css';
