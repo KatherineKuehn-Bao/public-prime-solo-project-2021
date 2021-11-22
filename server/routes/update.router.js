@@ -39,7 +39,13 @@ router.put('/edit/:id', (req, res) => {
     location_id = '$4'
     WHERE id= '$5';`
 
-    pool.query(queryText, [action.payload, idToUpdate])
+    pool.query(queryText, [
+        action.payload.food_name,
+        action.payload.expiration_date,
+        action.payload.status,
+        action.payload.food_type_id,
+        action.payload.location_id,
+        idToUpdate])
         .then((result) => {
             res.sendStatus(200);
         })
