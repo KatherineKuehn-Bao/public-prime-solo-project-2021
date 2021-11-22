@@ -92,8 +92,7 @@ function IngredientsItem() {
                                     variant="contained"
                                     color="success"
                                     onClick={() => updateIngredient(ingredient)}>
-                                    <IconButton style={{ padding: 8 }}
-                                    >
+                                    <IconButton>
                                         Consume
                                         {/* <Edit fontSize="small" /> */}
                                     </IconButton>
@@ -111,13 +110,16 @@ function IngredientsItem() {
 
                             {/* //Delete Button works and updates to DB */}
                             <TableCell>
-                                <Button
+                                <DeleteIcon
                                     className="Delete"
                                     variant="contained"
                                     color="error"
                                     onClick={() => handleDelete(ingredient)}>
-                                    Delete
-                                </Button>
+                                    <IconButton>
+                                        Delete
+                                    </IconButton>
+
+                                </DeleteIcon>
                             </TableCell>
                         </TableRow>
 
