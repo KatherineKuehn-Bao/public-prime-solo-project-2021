@@ -52,17 +52,14 @@ function IngredientsItem() {
         dispatch({ type: 'DELETE_INGREDIENT', payload: ingredient })
     }
 
-    // console.log('ingredients', ingredients);
 
 
     //Get the ingredients that are stored for the table 
     let storedIngredients = ingredients.filter(ingredient => {
-
         // console.log('ingredient status', ingredient.status);
         return ingredient.status === 'storage'
 
     });
-    // console.log('stored ingredients', storedIngredients);
 
 
     // *******RETURN ************ //
@@ -104,12 +101,13 @@ function IngredientsItem() {
                                 </CheckCircleIcon>
                             </TableCell>
 
+                            {/* //NEED TO ADD LOGIC STILL  */}
                             {/* Update thrown away foods on Database */}
                             <TableCell>
                                 <DeleteIcon
                                     className="trash"
                                     variant="contained"
-                                    color=""
+                                    color="info"
                                     onClick={() => updateIngredient(ingredient)}>
                                     <IconButton>
                                         Trash
