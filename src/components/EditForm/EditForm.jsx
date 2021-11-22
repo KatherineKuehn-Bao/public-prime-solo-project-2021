@@ -49,9 +49,9 @@ function EditForm(props) {
             payload: editIngredient
         })
         dispatch({
-            type: 'CLEAR_EDIT',
-
+            type: 'CLEAR_EDIT', payload: ''
         })
+        history.push('/user');
 
     }
 

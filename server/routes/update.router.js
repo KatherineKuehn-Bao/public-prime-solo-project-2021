@@ -26,7 +26,7 @@ router.put('/', (req, res) => {
         })
 })
 
-//EDIT 
+//EDIT -- currently has an error 
 router.put('/edit/:id', (req, res) => {
 
     const idToUpdate = req.body.id;
@@ -39,7 +39,7 @@ router.put('/edit/:id', (req, res) => {
     location_id = '$4'
     WHERE id= '$5';`
 
-    pool.query(queryText, [property, idToUpdate])
+    pool.query(queryText, [action.payload, idToUpdate])
         .then((result) => {
             res.sendStatus(200);
         })
