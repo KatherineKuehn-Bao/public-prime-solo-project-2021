@@ -83,6 +83,19 @@ function App() {
             <AddForm />
           </ProtectedRoute>
 
+
+
+          {/* TODO Add Edit Route */}
+          <ProtectedRoute 
+          exact 
+          path="/edit/:id" >
+
+           <EditForm 
+           component={EditForm}/> 
+          </ProtectedRoute>
+
+
+
           {/* <ProtectedRoute
             exact
             path="/settings"
