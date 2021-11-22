@@ -10,11 +10,13 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
-import DeleteIcon from '@mui/icons-material/Delete';
 
 //button icons 
 import { IconButton, Edit } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import BackspaceIcon from '@mui/icons-material/Backspace';
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 function IngredientsItem() {
 
@@ -74,6 +76,8 @@ function IngredientsItem() {
                         <TableCell> </TableCell>
                         <TableCell>Consume</TableCell>
                         <TableCell>Trash</TableCell>
+                        <TableCell>Delete</TableCell>
+
 
                     </TableRow>
                 </TableHead>
@@ -84,8 +88,9 @@ function IngredientsItem() {
                         <TableRow key={ingredient.id}>
                             <TableCell> {ingredient.food_name} </TableCell>
                             <TableCell> </TableCell>
-                            {/* <TableCell> <button> Trash </button></TableCell> */}
 
+
+                            {/* Consumed food gets updated on DB */}
                             <TableCell>
                                 <CheckCircleIcon
                                     className="consumed"
@@ -97,20 +102,28 @@ function IngredientsItem() {
                                         {/* <Edit fontSize="small" /> */}
                                     </IconButton>
                                 </CheckCircleIcon>
-
-                                {/* <Button
-                                    className="consumed"
-                                    variant="contained"
-                                    color="success"
-                                    onClick={() => updateIngredient(ingredient)}
-                                >
-                                    Consume
-                                </Button> */}
                             </TableCell>
+
+                            {/* Update thrown away foods on Database */}
+                            <TableCell>
+                                <DeleteIcon
+                                    className="trash"
+                                    variant="contained"
+                                    color=""
+                                    onClick={() => updateIngredient(ingredient)}>
+                                    <IconButton>
+                                        Trash
+                                        {/* <Edit fontSize="small" /> */}
+                                    </IconButton>
+                                </DeleteIcon>
+                            </TableCell>
+
+
+
 
                             {/* //Delete Button works and updates to DB */}
                             <TableCell>
-                                <DeleteIcon
+                                <BackspaceIcon
                                     className="Delete"
                                     variant="contained"
                                     color="error"
@@ -119,7 +132,7 @@ function IngredientsItem() {
                                         Delete
                                     </IconButton>
 
-                                </DeleteIcon>
+                                </BackspaceIcon>
                             </TableCell>
                         </TableRow>
 
