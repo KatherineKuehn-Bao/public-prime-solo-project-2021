@@ -23,9 +23,9 @@ router.put('/', (req, res) => {
     })
     .catch((error) => {
         console.log('error making update to DB', error);
-        
     })
 })
+
 
 // // EXAMPLE CODE *********************
 // router.put('/quantity/:id', (req, res) => {

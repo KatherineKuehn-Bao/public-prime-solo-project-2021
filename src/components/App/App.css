@@ -189,15 +189,30 @@ form {
 /* TABLE DATA  */
 
 
-td {
-  background-color: rgba(6, 64, 82, 0.55);
-  text-align: center;
+.fridge{
+  background-color: rgba(255, 99, 132, 0.2);
+}
+
+.freezer{
+  background-color:rgba(54, 162, 235, 0.2) ;
+}
+
+.pantry{
+  background-color: rgba(255, 206, 86, 0.2);
+}
+
+.fresh{
+  background-color: rgba(75, 192, 192, 0.2);
+
+
 }
 
 thead {
   background-color: grey;
   text-align: center;
 }
+
+
 
 
 /* //Table sized down until sticky bottom nav  */

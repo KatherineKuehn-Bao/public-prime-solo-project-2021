@@ -52,14 +52,30 @@ function IngredientsItem() {
         dispatch({ type: 'DELETE_INGREDIENT', payload: ingredient })
     }
 
-
-
     //Get the ingredients that are stored for the table 
     let storedIngredients = ingredients.filter(ingredient => {
         // console.log('ingredient status', ingredient.status);
         return ingredient.status === 'storage'
 
     });
+
+//CASE SWITCH 
+const locationClass = (ingredient) => {
+    switch (ingredient.location_id){
+        case 1:  
+            return 'fridge'
+        case 2: 
+            return 'freezer'
+        case 3:
+            return 'pantry'
+        case 4:
+            return 'fresh'
+        default: ''
+    }
+}
+
+
+
 
 
     // *******RETURN ************ //
@@ -72,17 +88,18 @@ function IngredientsItem() {
                         <TableCell>Ingredients</TableCell>
                         <TableCell> </TableCell>
                         <TableCell>Consume</TableCell>
-                        <TableCell>Trash</TableCell>
+                        {/* <TableCell>Trash</TableCell> */}
                         <TableCell>Delete</TableCell>
-
-
                     </TableRow>
                 </TableHead>
 
                 <TableBody>
                     {storedIngredients.map(ingredient =>
 
-                        <TableRow key={ingredient.id}>
+                        <TableRow 
+                            key={ingredient.id}
+                            className={locationClass(ingredient)}
+                        >
                             <TableCell> {ingredient.food_name} </TableCell>
                             <TableCell> </TableCell>
 
@@ -103,7 +120,7 @@ function IngredientsItem() {
 
                             {/* //NEED TO ADD LOGIC STILL  */}
                             {/* Update thrown away foods on Database */}
-                            <TableCell>
+                            {/* <TableCell>
                                 <DeleteIcon
                                     className="trash"
                                     variant="contained"
@@ -112,10 +129,9 @@ function IngredientsItem() {
                                     <IconButton>
                                         Trash
                                         {/* <Edit fontSize="small" /> */}
-                                    </IconButton>
-                                </DeleteIcon>
-                            </TableCell>
-
+                                    {/* </IconButton> */}
+                                {/* </DeleteIcon> */}
+                            {/* </TableCell> */}
 
 
 
