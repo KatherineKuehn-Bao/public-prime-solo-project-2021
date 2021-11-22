@@ -1,6 +1,6 @@
-const editReducer = (state = [{}], action) => {
+const editIngredientReducer = (state = {}, action) => {
     switch (action.type) {
-      case 'EDIT_ONCHANGE':
+      case 'SET_EDIT_ITEM':
           console.log('action payload', action.payload);
           
         return action.payload;
@@ -10,5 +10,5 @@ const editReducer = (state = [{}], action) => {
   };
   
 
-  export default editReducer;
+  export default editIngredientReducer;
   
