@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
+import { useState, useEffect } from "react";
+
 
 // Text Fields MUI 
 import Box from '@mui/material/Box';
@@ -26,6 +28,10 @@ function EditForm(props) {
     const type = useSelector(store => store.type);
     const location = useSelector(store => store.location);
 
+    useEffect(() => {
+        dispatch({ type: 'FETCH_TYPE' });
+        dispatch({ type: 'FETCH_LOCATION' });
+    }, []);
 
     //check if changing as typing 
     function handleChange(event, property) {
