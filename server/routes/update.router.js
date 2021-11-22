@@ -26,6 +26,23 @@ router.put('/', (req, res) => {
     })
 })
 
+//EDIT 
+router.put('/edit/:id', (req, res) => {
+
+    const idToUpdate =req.params.id;
+    const queryText = `
+    UPDATE "ingredients" 
+    SET food_name = '$1', 
+    expiration_date = '$2',
+    status = 'storage',
+    food_type_id = '$3',
+    location_id = '$4'
+    
+    WHERE id= '$5';`
+})
+
+
+
 
 // // EXAMPLE CODE *********************
 // router.put('/quantity/:id', (req, res) => {
