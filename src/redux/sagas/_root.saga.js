@@ -11,7 +11,6 @@ import ingredientsSaga from './ingredient.saga';
 import deleteSaga from './delete.saga';
 import updateItemSaga from './update.saga';
 import editIngredientSaga from './editIngredient.saga';
-import editIngredientReducer from '../reducers/editIngredient.reducer';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -31,6 +30,6 @@ export default function* rootSaga() {
     ingredientsSaga(),
     deleteSaga(),
     updateItemSaga(),
-    editIngredientReducer(),
+    editIngredientSaga(),
   ]);
 }
