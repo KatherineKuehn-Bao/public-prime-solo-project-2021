@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
-import editIngredientReducer from '../reducers/editIngredient.reducer';
 
 function* editIngredient(action) {
     try {
@@ -19,7 +18,7 @@ function* editIngredient(action) {
 
 
 //listen for UPDATE_ITEM dispatch 
-function* editItemSaga() {
+function* editIngredientSaga() {
     yield takeLatest('SET_EDIT_ITEM', editIngredient);
 }
 
