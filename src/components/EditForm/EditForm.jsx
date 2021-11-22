@@ -1,13 +1,31 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 
+// Text Fields MUI 
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import TextField from '@mui/material/TextField';
+
+//Install MUI 
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+
 
 function EditForm(props) {
 
     //intialize hooks 
     const dispatch = useDispatch();
     const history = useHistory();
-    const editIngredient = useSelector((store) => store.editIngredient);
+    const editIngredient = useSelector((store) => store.editIngredientReducer);
+
+    //get type and location 
+    const type = useSelector(store => store.type);
+    const location = useSelector(store => store.location);
+
 
 
     //check if changing as typing 
@@ -34,6 +52,7 @@ function EditForm(props) {
         history.push('/user');
     }
 
+ console.log('food_name', editIngredient.food_name);
 
 
     return (

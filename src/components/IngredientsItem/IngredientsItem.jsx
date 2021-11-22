@@ -56,8 +56,8 @@ function IngredientsItem() {
         dispatch({ type: 'DELETE_INGREDIENT', payload: ingredient })
     }
 
-    const handleEdit = () => {
-        history.push(`/edit`);
+    const handleEdit = (ingredient) => {
+        history.push(`/edit/${ingredient.id}`);
     }
 
     //Get the ingredients that are stored for the table 
@@ -67,7 +67,7 @@ function IngredientsItem() {
 
     });
 
-//CASE SWITCH 
+//CASE SWITCH  CLASS for Location 
 const locationClass = (ingredient) => {
     switch (ingredient.location_id){
         case 1:  
@@ -133,7 +133,7 @@ const locationClass = (ingredient) => {
                                     className="edit"
                                     variant="contained"
                                     color="info"
-                                    onClick={handleEdit}>
+                                    onClick={() => handleEdit(ingredient)}>
                                     {/* // onClick={() => updateIngredient(ingredient)}> */}
                                     <IconButton>
                                         Edit
