@@ -72,7 +72,7 @@ const LocationChart = () => {
                             position: 'bottom',
                         },
                         title: {
-                            display: true,
+                            display: false,
                             text: 'Locations of Foods ',
                         },
                     },

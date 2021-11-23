@@ -67,7 +67,7 @@ function IngredientsItem() {
 
     });
 
-//CASE SWITCH  CLASS for Location 
+//CASE SWITCH  --- CLASS for Location 
 const locationClass = (ingredient) => {
     switch (ingredient.location_id){
         case 1:  

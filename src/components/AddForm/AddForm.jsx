@@ -8,6 +8,7 @@ import '../AddForm/AddForm.css';
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import KitchenIcon from '@mui/icons-material/Kitchen';
 
 // Text Fields MUI 
 import Box from '@mui/material/Box';
@@ -135,7 +136,7 @@ function AddForm() {
         <>
             <div className=".container">
                 <div>
-                    <h1> Add Foods </h1>
+                    <h1> Add Foods <KitchenIcon></KitchenIcon></h1>
                 </div>
 
 

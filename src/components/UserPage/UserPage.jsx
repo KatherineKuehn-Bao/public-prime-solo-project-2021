@@ -8,6 +8,9 @@ import Nav from '../Nav/Nav';
 import IngredientsList from '../IngredientsList/IngredientsList';
 import LocationChart from '../LocationChart/LocationChart';
 import TypeBarChart from '../TypeBarChart/TypeBarChart';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
+import FilterAltIcon from '@mui/icons-material/FilterAlt';
 
 //MUI IMPORT 
 import Button from '@mui/material/Button';
@@ -39,31 +42,32 @@ function UserPage() {
 
   return (<>
 
-    <h1>Welcome, {user.username}!</h1>
+    <h1>Welcome, {user.username}! <EmojiPeopleIcon></EmojiPeopleIcon></h1>
 
     <div className="container">
-      <h2> What's in Stock </h2>
+      <h2> <FilterAltIcon></FilterAltIcon>Today's Top Picks </h2>
 
       <div className="top5">
         <IngredientsList />
-
       </div>
-      <div   className="ViewMore">
+
+      <div
+        className="ViewMore">
         <Button
-        
           onClick={viewMore}
           variant="contained"
-        > View More </Button>
+        > 
+        View More </Button>
       </div>
 
-      <h3> Charts and Graphs </h3>
-      <LocationChart />
-      {/* <p>Your ID is: {user.id}</p> */}
-      {/* <LogOutButton className="btn" /> */}
+      <div
+        className="userChart">
 
+        <h3> Location of Food </h3>
+        <LocationChart />
+      </div>
 
     </div>
-    {/* Make this NAV BAR  sticky  */}
     <Nav />
   </>
   );
