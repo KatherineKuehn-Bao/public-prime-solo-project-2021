@@ -1,3 +1,4 @@
+const { query } = require('express');
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
@@ -19,6 +20,21 @@ router.put('/', (req, res) => {
             console.log('error making update to DB', error);
         })
 })
+
+
+//update Waste item to "waste"
+router.put('/waste', (req, res) => {
+
+    let id = req.body.id;
+    let queryText = `
+    UPDATE ingredients
+    SET status='waste' 
+    WHERE id= $1;
+    `;
+    pool.query(queryText)
+})
+
+
 
 
 

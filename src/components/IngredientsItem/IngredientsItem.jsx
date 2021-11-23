@@ -35,6 +35,11 @@ function IngredientsItem() {
         dispatch({ type: 'UPDATE_ITEM', payload: ingredient });
     }
 
+    //update with waste
+    const wasteIngredient = (ingredient) => {
+        dispatch({ type: 'WASTE_ITEM', payload: ingredient });
+    }
+
     //Complete and functional Delete 'DELETE_INGREDIENT'
     const handleDelete = (ingredient) => {
         dispatch({ type: 'DELETE_INGREDIENT', payload: ingredient })
@@ -145,7 +150,7 @@ function IngredientsItem() {
                                 className="waste"
                                 variant="contained"
                                 color="error"
-                                onClick={() => updateIngredient(ingredient)}>
+                                onClick={() => wasteIngredient(ingredient)}>
                                 <IconButton>
                                     Waste
                                 </IconButton>

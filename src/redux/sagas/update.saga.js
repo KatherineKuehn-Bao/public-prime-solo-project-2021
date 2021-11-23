@@ -16,11 +16,24 @@ function* updateItem(action) {
     }
 }
 
+function* wasteItem(action) {
+    try{
+        console.log('waste item', action.payload);
+        yield axios.put('/api/update/waste', action.payload);
+        yield put ({type: 'FETCH_INGREDIENTS'});
+    }
+    catch (error){
+        console.log('error in PUT waste', error);
+    }
+}
+
+
 
 
 //listen for UPDATE_ITEM dispatch 
 function* updateItemSaga() {
     yield takeLatest('UPDATE_ITEM', updateItem);
+    yield takeLatest('WASTE_ITEM', wasteItem);
 }
 
 export default updateItemSaga;
