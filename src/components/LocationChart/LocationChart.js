@@ -31,12 +31,7 @@ const LocationChart = () => {
         } 
     }// end loop 
 
-    //Log the results 
-    console.log('locations ', fridge, freezer, pantry, fresh );
-    console.log('ingredients', ingredients);
     
-    
-
     return (
         <div >
             <Doughnut

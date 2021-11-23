@@ -67,7 +67,6 @@ function IngredientsItem() {
     }
 
 
-
     // *******RETURN ************ //
     return (<>
         <Table>

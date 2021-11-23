@@ -47,19 +47,17 @@ function EditForm(props) {
     function handleSubmit(event) {
         event.preventDefault();
         dispatch({
-            type: 'SET_EDIT_ITEM',
+            type: 'SET_EDIT_SUBMIT',
             payload: editIngredient
         })
         dispatch({
             type: 'CLEAR_EDIT', payload: ''
         })
         history.push('/user');
-
     }
 
     //CANCEL- works ---- ADD SNACKBAR 
     const cancelClick = (event) => {
-        // alert('nothing was saved');
         history.push('/user');
     }
 
@@ -77,10 +75,6 @@ function EditForm(props) {
                 <div className="form">
                     <Box sx={{ minWidth: 120 }}>
 
-                        {/* <FormControl full width> */}
-                        {/* className="formPanel" */}
-
-
                         <form onSubmit={(event) => handleSubmit(event, editIngredient)}>
                             <InputLabel> Edit Your Inventory </InputLabel>
 
@@ -91,15 +85,7 @@ function EditForm(props) {
                                 value={editIngredient.food_name}
                                 onChange={(event) => handleChange(event, "food_name")}
                             />
-
-                            {/* <LocalizationProvider dateAdapter={AdapterDateFns}>
-                        <DatePicker
-                            label="Expiration Date"
-                            value={newItem.expiration_date}
-                            onChange={(event) => handlePropertyChange(event, 'expiration_date')}
-                            renderInput={(params) => <TextField {...params} />}
-                        />
-                    </LocalizationProvider> */}
+{/* ***** DOESNT PRE POPULATE  */}
                             <input
                                 placeholder="expiration_date"
                                 type="date"
@@ -107,8 +93,7 @@ function EditForm(props) {
                                 onChange={(event) => handleChange(event, 'expiration_date')}
                             />
 
-{/* **********NEEDS WORK  */}
-                            {/* Types Dropdown */}
+{/* Types Dropdown */}
                             <InputLabel> Type of Food </InputLabel>
                             <Select
                                 label="type"
@@ -125,8 +110,7 @@ function EditForm(props) {
                                 })}
                             </Select>
 
-{/* **************NEEDS WORK  */}
-                            {/* Location dropdown */}
+{/* Location dropdown */}
                             <InputLabel> Location of Food </InputLabel>
 
                             <Select
@@ -160,12 +144,10 @@ function EditForm(props) {
                             </Stack>
                         </form>
 
-                        {/* </FormControl> */}
                     </Box>
                 </div>
             </div>
         </>
-
     );
 }
 

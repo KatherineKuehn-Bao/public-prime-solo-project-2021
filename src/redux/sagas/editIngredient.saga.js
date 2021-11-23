@@ -5,7 +5,7 @@ function* editIngredient(action) {
     try {
         console.log('edit item', action.payload);
         //point to the update router - send over edited ingredient
-        yield axios.put(`/api/update/edit/${action.payload.id}`, action.payload);
+        yield axios.put(`/api/update/edit/${action.payload.id}`, payload.data);
         //rerender table with updated information 
         yield put ({type: 'FETCH_INGREDIENTS'});
 
@@ -29,8 +29,9 @@ function* clearEdit(action){
 
 //listen for UPDATE_ITEM dispatch 
 function* editIngredientSaga() {
-    yield takeLatest('SET_EDIT_ITEM', editIngredient);
+    // yield takeLatest('SET_EDIT_ITEM', editIngredient);
     yield takeLatest('CLEAR_EDIT', clearEdit);
+    yield takeLatest('SET_EDIT_SUBMIT', editIngredient);
 }
 
 export default editIngredientSaga;
