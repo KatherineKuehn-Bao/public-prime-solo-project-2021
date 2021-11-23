@@ -78,6 +78,8 @@ function IngredientsItem() {
                     <TableCell>Eat</TableCell>
                     <TableCell>Edit</TableCell>
                     <TableCell>Delete</TableCell>
+                    <TableCell>Waste</TableCell>
+
                 </TableRow>
             </TableHead>
 
@@ -136,6 +138,19 @@ function IngredientsItem() {
                                 </IconButton>
 
                             </BackspaceIcon>
+                        </TableCell>
+
+                        <TableCell>
+                            <DeleteIcon
+                                className="waste"
+                                variant="contained"
+                                color="error"
+                                onClick={() => updateIngredient(ingredient)}>
+                                <IconButton>
+                                    Waste
+                                </IconButton>
+
+                            </DeleteIcon>
                         </TableCell>
                     </TableRow>
 

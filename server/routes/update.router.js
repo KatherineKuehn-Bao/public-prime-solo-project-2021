@@ -20,7 +20,9 @@ router.put('/', (req, res) => {
         })
 })
 
-//EDIT -- currently has an error 
+
+
+//EDIT -- Works! 
 router.put('/edit/:id', (req, res) => {
 
     const idToUpdate = Number(req.body.id);

@@ -4,11 +4,6 @@ import ArchiveIcon from '@mui/icons-material/Archive';
 import LogoutIcon from '@mui/icons-material/Logout';
 import AddIcon from '@mui/icons-material/Add';
 
-//pop up button 
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles';
-
-
 
 import { Paper } from '@mui/material';
 import { BottomNavigation } from '@mui/material';
@@ -32,21 +27,12 @@ function FunFile() {
     console.log(`this is newValue`, newValue);
     setNavValue(newValue);
     if (newValue === `logout`) {
-       dispatch({ type: 'LOGOUT' })}
+      dispatch({ type: 'LOGOUT' })
+    }
     else {
       history.push(newValue);
     }
   }
-
-  //ADD BUTTON 
-  const StyledFab = styled(Fab)({
-    position: 'absolute',
-    zIndex: 1,
-    top: -30,
-    left: 0,
-    right: 0,
-    margin: '0 auto',
-  });
 
 
 
@@ -86,7 +72,6 @@ function FunFile() {
 
       </BottomNavigation>
     </Paper>
-
 
   </>);
 }
