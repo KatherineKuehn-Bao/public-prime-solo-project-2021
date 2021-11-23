@@ -149,7 +149,7 @@ function IngredientsItem() {
                             <RemoveCircleOutlineOutlinedIcon
                                 className="Delete"
                                 variant="contained"
-                                color="error"
+                    
                                 onClick={() => handleDelete(ingredient)}>
                                 <IconButton>
                                     Delete

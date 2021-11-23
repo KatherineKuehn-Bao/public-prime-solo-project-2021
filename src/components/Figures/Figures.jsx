@@ -16,7 +16,7 @@ function Figures() {
   return (<>
 
     <div>
-      <h1> Figures Page <DonutLargeIcon></DonutLargeIcon></h1>
+      <h1> Charts & Graphs <DonutLargeIcon></DonutLargeIcon></h1>
     </div>
 
     {/* < BackButton /> */}

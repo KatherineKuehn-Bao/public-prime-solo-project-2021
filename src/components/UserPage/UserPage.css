@@ -8,7 +8,8 @@ font-size: 16px;
 
     text-align: center;
     height: 250px;
-   overflow-y: scroll;   
+   overflow-y: scroll; 
+  
 }
 
 .container{
@@ -25,4 +26,6 @@ padding-bottom: 25px;
 .userChart{
   background-color: #d6d9eb ;
   padding-top: 15px;
+  border-radius: 5px; /* 5px rounded corners */
+
 }

@@ -13,7 +13,7 @@ function Inventory() {
     return (<>
 
         <div>
-            <h1>Inventory Page <ArchiveIcon></ArchiveIcon></h1>
+            <h1>Your Inventory <ArchiveIcon></ArchiveIcon></h1>
         </div>
         
         <IngredientsList />
