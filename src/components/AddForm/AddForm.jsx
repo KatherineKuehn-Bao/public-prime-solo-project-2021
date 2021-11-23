@@ -22,27 +22,16 @@ import TextField from '@mui/material/TextField';
 // import IconButton from '@mui/material/IconButton';
 // import CloseIcon from '@mui/icons-material/Close';
 
-
-
-//date MUI 
-// import TextField from '@mui/material/TextField';
-// import AdapterDateFns from '@mui/lab/AdapterDateFns';
-// import LocalizationProvider from '@mui/lab/LocalizationProvider';
-// import DatePicker from '@mui/lab/DatePicker';
-
-
-
 //This form will edit and add new ingredients to the DB table 
 function AddForm() {
 
-    //intialize dispatch for reducer 
+    //intialize hooks 
     const dispatch = useDispatch();
     const history = useHistory();
 
-    //get type array from DB 
+    //get type  & Location array from DB 
     const type = useSelector(store => store.type);
     const location = useSelector(store => store.location);
-
 
     //hold new item in state 
     const [newItem, setNewItem] = useState({
@@ -50,10 +39,10 @@ function AddForm() {
         expiration_date: '',
         status: 'storage',
         food_type_id: '',
-        location_id: '',
-        //WIll need to look into how to convert type to id.  
+        location_id: '',  
     })
 
+    // FETCH Type and Location 
     useEffect(() => {
         dispatch({ type: 'FETCH_TYPE' });
         dispatch({ type: 'FETCH_LOCATION' });
@@ -62,14 +51,13 @@ function AddForm() {
 
     //when input is filled out
     const handlePropertyChange = (event, property) => {
-        // console.log('event happened', newItem);
         setNewItem({
             ...newItem,
             [property]: event.target.value,
         })
     };
 
-    //ADD -- ONLY ADD 
+    //ADD -- SUBMIT (newItem)
     const handleSubmit = (event, newItem) => {
         //ADD SNACKBAR 
         // setOpen(true);
@@ -80,7 +68,6 @@ function AddForm() {
         // } else {
         //     updateItem(item);
         // }
-        console.log('new item', newItem);
     }
 
     //Add new item to the DB Dispatch "POST_ITEM" / clearForm()
@@ -116,7 +103,7 @@ function AddForm() {
         })
     }
 
-    //MUI SNACKBAr
+    //MUI SNACKBAr ******STRETCH GOAL 
     // const action = (
     //     <React.Fragment>
     //       <Button color="secondary" size="small" onClick={handleClose}>
@@ -150,14 +137,10 @@ function AddForm() {
                 <div>
                     <h1> Add Foods </h1>
                 </div>
-                
+
 
                 <div className="form">
                     <Box sx={{ minWidth: 120 }}>
-
-                        {/* <FormControl full width> */}
-                        {/* className="formPanel" */}
-
 
                         <form onSubmit={(event) => handleSubmit(event, newItem)}>
                             <InputLabel> Enter New Inventory </InputLabel>
@@ -170,14 +153,6 @@ function AddForm() {
                                 onChange={(event) => handlePropertyChange(event, "food_name")}
                             />
 
-                            {/* <LocalizationProvider dateAdapter={AdapterDateFns}>
-                        <DatePicker
-                            label="Expiration Date"
-                            value={newItem.expiration_date}
-                            onChange={(event) => handlePropertyChange(event, 'expiration_date')}
-                            renderInput={(params) => <TextField {...params} />}
-                        />
-                    </LocalizationProvider> */}
                             <input
                                 placeholder="expiration_date"
                                 type="date"
@@ -241,7 +216,7 @@ function AddForm() {
                         {/* </FormControl> */}
                     </Box>
                 </div>
-            </div> 
+            </div>
         </>
     )
 }
