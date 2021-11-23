@@ -11,6 +11,7 @@ import TypeBarChart from '../TypeBarChart/TypeBarChart';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import InfoIcon from '@mui/icons-material/Info';
 
 //MUI IMPORT 
 import Button from '@mui/material/Button';
@@ -45,7 +46,10 @@ function UserPage() {
     <h1>Welcome, {user.username}! <EmojiPeopleIcon></EmojiPeopleIcon></h1>
 
     <div className="container">
-      <h2> <FilterAltIcon></FilterAltIcon>Today's Top Picks </h2>
+      <h2> What's In Stock Today </h2>
+      <p> <InfoIcon
+        fontSize="extraSmall">
+      </InfoIcon> Ingredients are filtered by expiration date</p>
 
       <div className="top5">
         <IngredientsList />
@@ -56,16 +60,18 @@ function UserPage() {
         <Button
           onClick={viewMore}
           variant="contained"
-        > 
-        View More </Button>
+        >
+          View More </Button>
       </div>
 
       <div
         className="userChart">
 
-        <h3> Location of Food </h3>
+        <h2> Location of Food </h2>
         <LocationChart />
       </div>
+
+      <h4> More Charts to Come...</h4>
 
     </div>
     <Nav />

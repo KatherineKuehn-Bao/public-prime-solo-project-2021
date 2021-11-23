@@ -7,21 +7,26 @@ import Nav from '../Nav/Nav';
 import LocationChart from '../LocationChart/LocationChart';
 import TypeBarChart from '../TypeBarChart/TypeBarChart';
 
+import DonutLargeIcon from '@mui/icons-material/DonutLarge';
+
+
 function Figures() {
 
 
   return (<>
 
     <div>
-      <h1> Figures Page </h1>
+      <h1> Figures Page <DonutLargeIcon></DonutLargeIcon></h1>
     </div>
 
     {/* < BackButton /> */}
 
     <div
       className="container">
+        <h2> Location of Inventory</h2>
       <LocationChart />
 
+<h2> Types of Foods </h2>
       <TypeBarChart />
     </div>
 

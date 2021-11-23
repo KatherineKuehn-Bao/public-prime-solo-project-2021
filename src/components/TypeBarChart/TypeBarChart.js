@@ -77,7 +77,7 @@ console.log('type', fruit, veggies, legumes, grains, processed, nutsSeeds);
                 position: 'bottom',
             },
             title: {
-                display: true,
+                display: false,
                 text: 'Types of Foods',
             },
         },
