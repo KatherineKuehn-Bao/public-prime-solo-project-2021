@@ -39,7 +39,7 @@ function AddForm() {
         expiration_date: '',
         status: 'storage',
         food_type_id: '',
-        location_id: '',  
+        location_id: '',
     })
 
     // FETCH Type and Location 
@@ -196,24 +196,26 @@ function AddForm() {
                                         </MenuItem>
                                     );
                                 })}
-
                             </Select>
 
+                            {/* *******SUBMIT BUTTON */}
                             <Stack direction="column" spacing={2}>
+
                                 <Button
                                     type="submit"
-                                    variant="contained">
+                                    variant="contained"
+                                >
                                     Save </Button>
 
                                 <Button
                                     type="button"
                                     onClick={cancelClick}
-                                    variant="contained">
+                                    variant="contained"
+                                >
                                     Back to Home  </Button>
                             </Stack>
-                        </form>
 
-                        {/* </FormControl> */}
+                        </form>
                     </Box>
                 </div>
             </div>
