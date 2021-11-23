@@ -3,10 +3,27 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 
+//update consumed item status to 'consumed'
+router.put('/', (req, res) => {
+
+    let id = req.body.id;
+    let queryText = `
+    UPDATE ingredients 
+    SET status='consumed' WHERE id=$1;
+    `;
+    pool.query(queryText, [id])
+        .then((result) => {
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log('error making update to DB', error);
+        })
+})
+
 //EDIT -- currently has an error 
 router.put('/edit/:id', (req, res) => {
 
-    const idToUpdate = Number(req.params.id);
+    const idToUpdate = Number(req.body.id);
     const queryText = `
     UPDATE "ingredients" 
     SET food_name = $1, 
@@ -32,8 +49,7 @@ router.put('/edit/:id', (req, res) => {
         });
 
 });
-
-
+ 
 
 
 module.exports = router;
