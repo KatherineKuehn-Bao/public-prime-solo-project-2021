@@ -31,7 +31,14 @@ router.put('/waste', (req, res) => {
     SET status='waste' 
     WHERE id= $1;
     `;
-    pool.query(queryText)
+    pool.query(queryText, [id])
+    .then((result) =>{
+        res.sendStatus(200);
+    })
+    .catch((error) => {
+        console.log('error making waste in DB', error);
+        
+    })
 })
 
 

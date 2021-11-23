@@ -19,7 +19,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import BackspaceIcon from '@mui/icons-material/Backspace';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-
+import RemoveCircleOutlineOutlinedIcon from '@mui/icons-material/RemoveCircleOutlineOutlined';
 
 function IngredientsItem() {
 
@@ -82,8 +82,8 @@ function IngredientsItem() {
                     <TableCell> </TableCell>
                     <TableCell>Eat</TableCell>
                     <TableCell>Edit</TableCell>
-                    <TableCell>Delete</TableCell>
                     <TableCell>Waste</TableCell>
+                    <TableCell>Delete</TableCell>
 
                 </TableRow>
             </TableHead>
@@ -129,22 +129,7 @@ function IngredientsItem() {
                             </EditIcon>
                         </TableCell>
 
-
-
-                        {/* //Delete Button works and updates to DB */}
-                        <TableCell>
-                            <BackspaceIcon
-                                className="Delete"
-                                variant="contained"
-                                color="error"
-                                onClick={() => handleDelete(ingredient)}>
-                                <IconButton>
-                                    Delete
-                                </IconButton>
-
-                            </BackspaceIcon>
-                        </TableCell>
-
+{/* ***** Waste update */}
                         <TableCell>
                             <DeleteIcon
                                 className="waste"
@@ -157,6 +142,23 @@ function IngredientsItem() {
 
                             </DeleteIcon>
                         </TableCell>
+
+
+                        {/* //Delete Button works and updates to DB */}
+                        <TableCell>
+                            <RemoveCircleOutlineOutlinedIcon
+                                className="Delete"
+                                variant="contained"
+                                color="error"
+                                onClick={() => handleDelete(ingredient)}>
+                                <IconButton>
+                                    Delete
+                                </IconButton>
+
+                            </RemoveCircleOutlineOutlinedIcon>
+                        </TableCell>
+
+
                     </TableRow>
 
                 )}
