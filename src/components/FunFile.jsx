@@ -18,31 +18,27 @@ import React from 'react';
 //sticky Nav Set up 
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Dispatch, useDispatch } from 'react-redux';
 
 
 function FunFile() {
   //set Value & intialize hooks 
   const [navValue, setNavValue] = useState(``);
   const history = useHistory();
+  const dispatch = useDispatch();
 
-//change pages with icons 
+  //change pages with icons 
   const handleChange = (event, newValue) => {
     console.log(`this is newValue`, newValue);
     setNavValue(newValue);
     if (newValue === `logout`) {
-      console.log(`log out pop up `);
-      setOpen(true);
-    }
-    // else if (newValue === `settings`) {
-    //     console.log(`settings popup`);
-    //     setOpen(true);
-    // }
+       dispatch({ type: 'LOGOUT' })}
     else {
       history.push(newValue);
     }
   }
 
-//ADD BUTTON 
+  //ADD BUTTON 
   const StyledFab = styled(Fab)({
     position: 'absolute',
     zIndex: 1,
@@ -74,19 +70,10 @@ function FunFile() {
           label="Inventory"
           icon={<ArchiveIcon />} />
 
-<BottomNavigationAction
+        <BottomNavigationAction
           value="/form"
           label="Add Food"
           icon={<AddIcon />} />
-
-
-//not clicking 
-        {/* <StyledFab 
-        color="secondary" 
-        aria-label="add"
-        value="/form">
-          <AddIcon />
-        </StyledFab> */}
 
         <BottomNavigationAction
           value="/figures"
