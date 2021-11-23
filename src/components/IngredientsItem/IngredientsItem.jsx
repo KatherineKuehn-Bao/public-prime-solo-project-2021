@@ -35,20 +35,11 @@ function IngredientsItem() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    //EDIT Button 
-    // const editIngredient = (ingredient) => {
-    //     setFormMode('edit');
-    //     setEditId(ingredient.id);
-    //     console.log('ingredient id' , ingredient.id);
-    //     console.log('mode', formMode);
-    // }
-
-    //update item in the DB -
+    //update item in the DB -UPDATE_ITEM
     const updateIngredient = (ingredient) => {
         //sagas 
         dispatch({ type: 'UPDATE_ITEM', payload: ingredient });
         // console.log('clicked, edit item', ingredient);
-
     }
 
     //Complete and functional Delete 'DELETE_INGREDIENT'
@@ -56,7 +47,9 @@ function IngredientsItem() {
         dispatch({ type: 'DELETE_INGREDIENT', payload: ingredient })
     }
 
+    // **********CURRENT PROJECT
     const handleEdit = (ingredient) => {
+        dispatch ({type: 'SET_EDIT_ITEM', payload: props})
         history.push(`/edit/${ingredient.id}`);
     }
 

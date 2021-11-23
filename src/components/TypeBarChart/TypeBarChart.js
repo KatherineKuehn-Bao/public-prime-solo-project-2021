@@ -8,30 +8,32 @@ const TypeBarChart = () => {
     //get ingredients from the store
     const ingredients = useSelector((store) => store.ingredients);
 
-let fruit = [];
-let veggies = [];
-let legumes =[];
-let grains = [];
-let processed = [];
-let nutsSeeds = [];
 
-for (let ingredient of ingredients){
-    if(ingredient.food_type_id === 1){
-        fruit.push(ingredient)
-    } else if (ingredient.food_type_id === 2){
-        veggies.push(ingredient)
-    } else if ( ingredient.food_type_id === 3){
-        legumes.push(ingredient)
-    } else if (ingredient.food_type_id === 4){
-        grains.push(ingredient)
-    } else if (ingredient.food_type_id === 5){
-        processed.push(ingredient)
-    } else if (ingredient.food_type_id === 6){
-        nutsSeeds.push(ingredient)
-    }
-} //end loop 
+    //Store each type 
+    let fruit = [];
+    let veggies = [];
+    let legumes = [];
+    let grains = [];
+    let processed = [];
+    let nutsSeeds = [];
 
-console.log('type', fruit, veggies, legumes, grains, processed, nutsSeeds);
+    for (let ingredient of ingredients) {
+        if (ingredient.food_type_id === 1) {
+            fruit.push(ingredient)
+        } else if (ingredient.food_type_id === 2) {
+            veggies.push(ingredient)
+        } else if (ingredient.food_type_id === 3) {
+            legumes.push(ingredient)
+        } else if (ingredient.food_type_id === 4) {
+            grains.push(ingredient)
+        } else if (ingredient.food_type_id === 5) {
+            processed.push(ingredient)
+        } else if (ingredient.food_type_id === 6) {
+            nutsSeeds.push(ingredient)
+        }
+    } //end loop 
+
+    console.log('type', fruit, veggies, legumes, grains, processed, nutsSeeds);
 
 
 
@@ -80,15 +82,16 @@ console.log('type', fruit, veggies, legumes, grains, processed, nutsSeeds);
                 display: false,
                 text: 'Types of Foods',
             },
+            
         },
     };
 
     return (
-    <>
-        <Bar data={data} options={options} />
-    </>
+        <>
+            <Bar data={data} options={options} />
+        </>
     );
-    
+
 }
 
 export default TypeBarChart;
