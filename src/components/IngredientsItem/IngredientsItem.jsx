@@ -74,7 +74,7 @@ function IngredientsItem() {
 
     // *******RETURN ************ //
     return (<>
-        <Table>
+        <Table className="table">
 
             <TableHead>
                 <TableRow>

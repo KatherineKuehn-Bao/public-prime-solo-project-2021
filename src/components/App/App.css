@@ -9,6 +9,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0px;
   background-color: #e4e6f2;
+
 }
 
 img {
@@ -53,7 +54,7 @@ Container
 .container {
   padding: 20px;
   align-items: center;
-  padding-bottom: 75px;
+  padding-bottom: 125px;
 }
 
 /* --------------------------------------------------------------------------------
