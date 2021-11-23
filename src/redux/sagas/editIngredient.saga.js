@@ -3,15 +3,15 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 function* editIngredient(action) {
     try {
-        console.log('edit item', action.payload);
+        console.log('edit item action.payload', action.payload);
         //point to the update router - send over edited ingredient
-        yield axios.put(`/api/update/edit/${action.payload.id}`, payload.data);
+        yield axios.put(`/api/update/edit/${action.payload.id}`, action.payload);
         //rerender table with updated information 
         yield put ({type: 'FETCH_INGREDIENTS'});
+        yield put ({type:  'CLEAR_EDIT', payload: '' })
 
     } catch (error) {
         console.log('Error in PUT', error);
-        
     }
 }
 

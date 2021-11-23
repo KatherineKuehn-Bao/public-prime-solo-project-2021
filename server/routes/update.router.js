@@ -6,15 +6,15 @@ const router = express.Router();
 //EDIT -- currently has an error 
 router.put('/edit/:id', (req, res) => {
 
-    const idToUpdate = req.body.id;
+    const idToUpdate = Number(req.params.id);
     const queryText = `
     UPDATE "ingredients" 
-    SET food_name = '$1', 
-    expiration_date = '$2',
+    SET food_name = $1, 
+    expiration_date = $2,
     status = 'storage',
-    food_type_id = '$3',
-    location_id = '$4'
-    WHERE id= '$5';`
+    food_type_id = $3,
+    location_id = $4
+    WHERE id= $5;`
 
     pool.query(queryText, [
         req.body.food_name,

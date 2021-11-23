@@ -50,9 +50,7 @@ function EditForm(props) {
             type: 'SET_EDIT_SUBMIT',
             payload: editIngredient
         })
-        dispatch({
-            type: 'CLEAR_EDIT', payload: ''
-        })
+       
         history.push('/user');
     }
 
