@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import Nav from '../Nav/Nav';
 import IngredientsList from '../IngredientsList/IngredientsList';
 import LocationChart from '../LocationChart/LocationChart';
+import WasteGraph from '../WasteGraph/WasteGraph';
 import TypeBarChart from '../TypeBarChart/TypeBarChart';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
@@ -66,12 +67,12 @@ function UserPage() {
 
       <div
         className="userChart">
+        <h2> Wasted Food </h2>
 
-        <h2> Location of Food </h2>
-        <LocationChart />
+        <WasteGraph />
+
+        
       </div>
-
-      <h4> More Charts to Come...</h4>
 
     </div>
     <Nav />
