@@ -10,6 +10,8 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
+import EditIcon from '@mui/icons-material/Edit';
+
 
 //Install MUI 
 import * as React from 'react';
@@ -55,22 +57,20 @@ function EditForm(props) {
 
     }
 
-    //CANCEL- works 
+    //CANCEL- works ---- ADD SNACKBAR 
     const cancelClick = (event) => {
-        alert('nothing was saved');
+        // alert('nothing was saved');
         history.push('/user');
     }
 
 
-    console.log('food_name', editIngredient);
-    console.log('type', type )
-
+    console.log('edit Ingredient', editIngredient);
 
     return (
         <>
             <div className=".container">
                 <div>
-                    <h1> Edit Foods </h1>
+                    <h1> Edit Foods <EditIcon></EditIcon> </h1>
                 </div>
 
 
