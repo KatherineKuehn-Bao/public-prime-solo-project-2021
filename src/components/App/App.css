@@ -256,12 +256,12 @@ align-items: center;
 
 background-color: rgb(0, 0, 255, 0.105);
 border-radius: 5px; /* 5px rounded corners */
-padding-top: 15px;
+padding-top: 30px;
 }
 
 .foodWasted{
 
   background-color: rgba(251, 251, 252, 0.975);
 border-radius: 5px; /* 5px rounded corners */
-padding-top: 15px;
+padding-top: 30px;
 }

@@ -65,7 +65,6 @@ function AddForm() {
         // setOpen(true);
         event.preventDefault();
         addItem(newItem);
-    
     }
 
     //Add new item to the DB Dispatch "POST_ITEM" / clearForm()
