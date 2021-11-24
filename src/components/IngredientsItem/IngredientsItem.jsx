@@ -44,7 +44,7 @@ function IngredientsItem() {
         dispatch({ type: 'DELETE_INGREDIENT', payload: ingredient })
     }
 
-    // **********CURRENT PROJECT
+    // "SET_EDIT_ITEM"
     const handleEdit = (ingredient) => {
         dispatch({ type: 'SET_EDIT_ITEM', payload: ingredient })
         history.push(`/edit/${ingredient.id}`);
@@ -86,7 +86,7 @@ function IngredientsItem() {
 
                 </TableRow>
             </TableHead>
-
+{/* ** TABLE DATA  */}
             <TableBody>
                 {storedIngredients.map(ingredient =>
 
@@ -98,7 +98,7 @@ function IngredientsItem() {
                         <TableCell> </TableCell>
 
 
-                        {/* Consumed food gets updated on DB */}
+{/* Consumed food gets updated on DB */}
                         <TableCell>
                             <CheckCircleIcon
                                 className="eat"
@@ -112,8 +112,7 @@ function IngredientsItem() {
                             </CheckCircleIcon>
                         </TableCell>
 
-                        {/* //NEED TO ADD LOGIC STILL  */}
-                        {/* Update thrown away foods on Database */}
+ {/* Update thrown away foods on Database */}
                         <TableCell>
                             <EditIcon
                                 className="edit"
@@ -142,7 +141,7 @@ function IngredientsItem() {
                         </TableCell>
 
 
-                        {/* //Delete Button works and updates to DB */}
+{/* //Delete Button works and updates to DB */}
                         <TableCell>
                             <RemoveCircleOutlineOutlinedIcon
                                 className="Delete"
