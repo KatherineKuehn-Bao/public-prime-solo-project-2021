@@ -20,8 +20,6 @@ function Figures() {
       <h1> Charts & Graphs <DonutLargeIcon></DonutLargeIcon></h1>
     </div>
 
-    {/* < BackButton /> */}
-
     <div
       className="container">
 
@@ -39,7 +37,7 @@ function Figures() {
         <h2>Wasted Foods </h2>
         <WasteGraph />
       </div>
-      
+
     </div>
     <Nav />
 
