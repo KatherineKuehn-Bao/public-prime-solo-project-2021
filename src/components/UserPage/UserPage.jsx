@@ -7,11 +7,7 @@ import { useSelector } from 'react-redux';
 import Nav from '../Nav/Nav';
 import IngredientsList from '../IngredientsList/IngredientsList';
 import LocationChart from '../LocationChart/LocationChart';
-import WasteGraph from '../WasteGraph/WasteGraph';
-import TypeBarChart from '../TypeBarChart/TypeBarChart';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import InfoIcon from '@mui/icons-material/Info';
 
 //MUI IMPORT 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {useSelector} from 'react-redux';
-// import { useHistory } from 'react-router-dom';
+import KitchenIcon from '@mui/icons-material/Kitchen';
 
 function LoginForm() {
   const [username, setUsername] = useState('');
@@ -28,7 +28,7 @@ function LoginForm() {
   }; // end login
 
   return (<>
-  <h1> In Stock</h1>
+  <h1> In Stock <KitchenIcon></KitchenIcon></h1>
     <form className="formPanel" onSubmit={login}>
       <h2>Login</h2>
       {errors.loginMessage && (
