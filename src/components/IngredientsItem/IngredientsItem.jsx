@@ -134,7 +134,6 @@ function IngredientsItem() {
                             <DeleteIcon
                                 className="waste"
                                 variant="contained"
-                                color="error"
                                 onClick={() => wasteIngredient(ingredient)}>
                                 <IconButton>
                                     Waste
@@ -149,7 +148,8 @@ function IngredientsItem() {
                             <RemoveCircleOutlineOutlinedIcon
                                 className="Delete"
                                 variant="contained"
-                    
+                                color="error"
+
                                 onClick={() => handleDelete(ingredient)}>
                                 <IconButton>
                                     Delete
@@ -160,6 +160,7 @@ function IngredientsItem() {
 
 
                     </TableRow>
+               
 
                 )}
             </TableBody>
