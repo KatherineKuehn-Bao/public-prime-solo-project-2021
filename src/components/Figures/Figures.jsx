@@ -35,9 +35,11 @@ function Figures() {
       {/* <h2> Location of Inventory</h2>
       <LocationChart /> */}
 
-      <h2>Wasted Foods </h2>
-      <WasteGraph />
-
+      <div className="foodWasted">
+        <h2>Wasted Foods </h2>
+        <WasteGraph />
+      </div>
+      
     </div>
     <Nav />
 
