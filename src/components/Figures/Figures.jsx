@@ -8,6 +8,7 @@ import LocationChart from '../LocationChart/LocationChart';
 import TypeBarChart from '../TypeBarChart/TypeBarChart';
 
 import DonutLargeIcon from '@mui/icons-material/DonutLarge';
+import WasteGraph from '../WasteGraph/WasteGraph';
 
 
 function Figures() {
@@ -23,13 +24,21 @@ function Figures() {
 
     <div
       className="container">
-        <h2> Location of Inventory</h2>
-      <LocationChart />
 
-<h2> Types of Foods </h2>
-      <TypeBarChart />
+      <div className="typesChart">
+
+        <h2> Types of foods In Stock</h2>
+        <TypeBarChart />
+
+      </div>
+
+      {/* <h2> Location of Inventory</h2>
+      <LocationChart /> */}
+
+      <h2>Wasted Foods </h2>
+      <WasteGraph />
+
     </div>
-
     <Nav />
 
   </>);

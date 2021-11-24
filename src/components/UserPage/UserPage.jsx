@@ -47,31 +47,35 @@ function UserPage() {
     <h1>Welcome, {user.username}! <EmojiPeopleIcon></EmojiPeopleIcon></h1>
 
     <div className="container">
-      <h2> What's In Stock Today </h2>
-      <p> <InfoIcon
-        fontSize="extraSmall">
-      </InfoIcon> Ingredients are filtered by expiration date</p>
 
-      <div className="top5">
-        <IngredientsList />
+      <div className="section1">
+        <h2> What's In Stock Today </h2>
+        <p> <InfoIcon
+          fontSize="extraSmall">
+        </InfoIcon> Ingredients are filtered by expiration date</p>
+
+        <div className="top5">
+          <IngredientsList />
+        </div>
+
+        <div
+          className="ViewMore">
+          <Button
+            onClick={viewMore}
+            variant="contained"
+          >
+            View More </Button>
+        </div>
       </div>
 
-      <div
-        className="ViewMore">
-        <Button
-          onClick={viewMore}
-          variant="contained"
-        >
-          View More </Button>
-      </div>
+
 
       <div
         className="userChart">
-        <h2> Wasted Food </h2>
+        <h2> Location of Ingredients  </h2>
 
-        <WasteGraph />
+        <LocationChart />
 
-        
       </div>
 
     </div>

@@ -8,7 +8,7 @@ import '../AddForm/AddForm.css';
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import KitchenIcon from '@mui/icons-material/Kitchen';
+import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 
 // Text Fields MUI 
 import Box from '@mui/material/Box';
@@ -58,17 +58,14 @@ function AddForm() {
         })
     };
 
-    //ADD -- SUBMIT (newItem)
+
+// ****NEEDS WORK //ADD -- SUBMIT (newItem)
     const handleSubmit = (event, newItem) => {
         //ADD SNACKBAR 
         // setOpen(true);
         event.preventDefault();
         addItem(newItem);
-        // if (mode === 'add') {
-        //     addItem(item);
-        // } else {
-        //     updateItem(item);
-        // }
+    
     }
 
     //Add new item to the DB Dispatch "POST_ITEM" / clearForm()
@@ -80,14 +77,7 @@ function AddForm() {
         clearForm();
     }
 
-    //update item in the DB -
-    // const updateItem = (item) => {
-    //     //sagas 
-    //     dispatch({ type: 'UPDATE_ITEM', payload: item });
-    //     console.log('clicked, edit item');
-    // }
-
-    //WORKS - back to home - push to /user page
+    //push to /user page
     const cancelClick = (event) => {
         history.push('/user');
     }
@@ -136,7 +126,7 @@ function AddForm() {
         <>
             <div className=".container">
                 <div>
-                    <h1> Add Foods <KitchenIcon></KitchenIcon></h1>
+                    <h1> Add Foods <LocalGroceryStoreIcon></LocalGroceryStoreIcon></h1>
                 </div>
 
 
@@ -154,6 +144,7 @@ function AddForm() {
                                 onChange={(event) => handlePropertyChange(event, "food_name")}
                             />
 
+{/* Expiration Date  */}
                             <input
                                 placeholder="expiration_date"
                                 type="date"
@@ -162,7 +153,7 @@ function AddForm() {
                             />
 
 
-                            {/* Types Dropdown */}
+{/* Types Dropdown */}
                             <InputLabel> Type of Food </InputLabel>
                             <Select
                                 label="type"
@@ -179,8 +170,7 @@ function AddForm() {
                                 })}
                             </Select>
 
-
-                            {/* Location dropdown */}
+{/* Location dropdown */}
                             <InputLabel> Location of Food </InputLabel>
 
                             <Select
@@ -199,7 +189,7 @@ function AddForm() {
                                 })}
                             </Select>
 
-                            {/* *******SUBMIT BUTTON */}
+{/* *******SUBMIT BUTTON */}
                             <Stack direction="column" spacing={2}>
 
                                 <Button
