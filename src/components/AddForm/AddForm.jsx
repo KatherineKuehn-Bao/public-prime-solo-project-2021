@@ -58,7 +58,6 @@ function AddForm() {
         })
     };
 
-
 // ****NEEDS WORK //ADD -- SUBMIT (newItem)
     const handleSubmit = (event, newItem) => {
         //ADD SNACKBAR 
