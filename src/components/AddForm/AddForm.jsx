@@ -18,13 +18,11 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 
-//DATE IMPORTS 
-
-
 //snackbar MUi 
-// import Snackbar from '@mui/material/Snackbar';
-// import IconButton from '@mui/material/IconButton';
-// import CloseIcon from '@mui/icons-material/Close';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+
 
 //This form will edit and add new ingredients to the DB table 
 function AddForm() {
@@ -96,32 +94,24 @@ function AddForm() {
     }
 
     //MUI SNACKBAr ******STRETCH GOAL 
-    // const action = (
-    //     <React.Fragment>
-    //       <Button color="secondary" size="small" onClick={handleClose}>
-    //         UNDO
-    //       </Button>
-    //       <IconButton
-    //         size="small"
-    //         aria-label="close"
-    //         color="inherit"
-    //         onClick={handleClose}
-    //       >
-    //         <CloseIcon fontSize="small" />
-    //       </IconButton>
-    //     </React.Fragment>
-    //   );
+    const Alert = React.forwardRef(function Alert(props, ref) {
+        return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+      });
+      
+        const [open, setOpen] = React.useState(false);
+      
+        const handleClick = () => {
+          setOpen(true);
+        };
+      
+        const handleClose = (event, reason) => {
+          if (reason === 'clickaway') {
+            return;
+          }
+      
+          setOpen(false);
+        };
 
-
-    //Close MUI snackbar 
-
-    //   const handleClose = (event, reason) => {
-    //     if (reason === 'clickaway') {
-    //       return;
-    //     }
-
-    //     setOpen(false);
-    //   };
 
 
     return (
@@ -135,7 +125,7 @@ function AddForm() {
                     <Box sx={{ minWidth: 120 }}>
 
                         <form 
-                        className="FormContainer"
+                        className="FormContainer "
                         onSubmit={(event) => handleSubmit(event, newItem)}>
                             <InputLabel> Enter Inventory Here </InputLabel>
 
@@ -149,7 +139,7 @@ function AddForm() {
                                 onChange={(event) => handlePropertyChange(event, "food_name")}
                             />
 
-                            {/* Expiration Date  */}
+     {/* Expiration Date  */}
                             <TextField
                                 id="date"
                                 type="date"
@@ -159,7 +149,7 @@ function AddForm() {
                             />
 
 
-                            {/* Types Dropdown */}
+    {/* Types Dropdown */}
                             <InputLabel> Type of Food </InputLabel>
                             <Select
                                 label="type"
@@ -176,7 +166,7 @@ function AddForm() {
                                 })}
                             </Select>
 
-                            {/* Location dropdown */}
+    {/* Location dropdown */}
                             <InputLabel> Location of Food </InputLabel>
 
                             <Select
@@ -194,15 +184,24 @@ function AddForm() {
                                     );
                                 })}
                             </Select>
-<Stack/>
-                            {/* *******SUBMIT BUTTON */}
+
+    {/* *******SUBMIT BUTTON */}
                             <Stack direction="column" spacing={2}>
 
                                 <Button
                                     type="submit"
+                                    onClick={handleClick}
                                     variant="contained"
                                 >
                                     Save </Button>
+
+                                    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                                        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                                        New food has been saved!
+                                        </Alert>
+                                    </Snackbar>
+
+
 
                                 <Button
                                     type="button"
