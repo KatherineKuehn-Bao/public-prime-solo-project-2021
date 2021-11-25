@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
-import FunFile from '../FunFile';
+import NavBar from '../NavBar';
 
 //MUI  -- not used 
 // import HomeIcon from '@mui/icons-material/Home';
@@ -15,9 +15,7 @@ function Nav() {
 
   return (
     <div className="nav">
-      {/* <Link to="/home">
-        <h2 className="nav-title"> back </h2>
-      </Link> */}
+  
       <div>
         {/* If no user is logged in, show these links */}
         {user.id === null &&
@@ -30,12 +28,7 @@ function Nav() {
         {/* If a user is logged in, show these links */}
         {user.id && (
           <>
-
-
-            <FunFile />
-
-
-
+            <NavBar />
           </>
         )}
       </div>
