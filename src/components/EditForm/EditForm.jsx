@@ -70,10 +70,12 @@ function EditForm(props) {
                 </div>
 
 
-                <div className="form">
+                <div className="form ">
                     <Box sx={{ minWidth: 120 }}>
 
-                        <form onSubmit={(event) => handleSubmit(event, editIngredient)}>
+                        <form 
+                        className="FormContainer"
+                        onSubmit={(event) => handleSubmit(event, editIngredient)}>
                             <InputLabel> Edit Your Inventory </InputLabel>
 
                             <TextField

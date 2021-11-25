@@ -134,7 +134,9 @@ function AddForm() {
                 <div className="form">
                     <Box sx={{ minWidth: 120 }}>
 
-                        <form onSubmit={(event) => handleSubmit(event, newItem)}>
+                        <form 
+                        className="FormContainer"
+                        onSubmit={(event) => handleSubmit(event, newItem)}>
                             <InputLabel> Enter Inventory Here </InputLabel>
 
                             <TextField
