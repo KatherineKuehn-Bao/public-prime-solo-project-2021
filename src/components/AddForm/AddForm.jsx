@@ -18,6 +18,9 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 
+//DATE IMPORTS 
+
+
 //snackbar MUi 
 // import Snackbar from '@mui/material/Snackbar';
 // import IconButton from '@mui/material/IconButton';
@@ -58,7 +61,7 @@ function AddForm() {
         })
     };
 
-// ****NEEDS WORK //ADD -- SUBMIT (newItem)
+    // ****NEEDS WORK //ADD -- SUBMIT (newItem)
     const handleSubmit = (event, newItem) => {
         //ADD SNACKBAR 
         // setOpen(true);
@@ -120,6 +123,7 @@ function AddForm() {
     //     setOpen(false);
     //   };
 
+
     return (
         <>
             <div className=".container">
@@ -127,31 +131,33 @@ function AddForm() {
                     <h1> Add Foods <LocalGroceryStoreIcon></LocalGroceryStoreIcon></h1>
                 </div>
 
-
                 <div className="form">
                     <Box sx={{ minWidth: 120 }}>
 
                         <form onSubmit={(event) => handleSubmit(event, newItem)}>
-                            <InputLabel> Enter New Inventory </InputLabel>
+                            <InputLabel> Enter Inventory Here </InputLabel>
 
                             <TextField
                                 variant="outlined"
-                                label="type food here"
+                                label="new ingredient"
                                 type="text"
+                                helperText="Ingredient Name"
+
                                 value={newItem.food_name}
                                 onChange={(event) => handlePropertyChange(event, "food_name")}
                             />
 
-{/* Expiration Date  */}
-                            <input
-                                placeholder="expiration_date"
+                            {/* Expiration Date  */}
+                            <TextField
+                                id="date"
                                 type="date"
+                                helperText="Expiration Date"
                                 value={newItem.expiration_date}
                                 onChange={(event) => handlePropertyChange(event, 'expiration_date')}
                             />
 
 
-{/* Types Dropdown */}
+                            {/* Types Dropdown */}
                             <InputLabel> Type of Food </InputLabel>
                             <Select
                                 label="type"
@@ -168,7 +174,7 @@ function AddForm() {
                                 })}
                             </Select>
 
-{/* Location dropdown */}
+                            {/* Location dropdown */}
                             <InputLabel> Location of Food </InputLabel>
 
                             <Select
@@ -186,8 +192,8 @@ function AddForm() {
                                     );
                                 })}
                             </Select>
-
-{/* *******SUBMIT BUTTON */}
+<Stack/>
+                            {/* *******SUBMIT BUTTON */}
                             <Stack direction="column" spacing={2}>
 
                                 <Button
