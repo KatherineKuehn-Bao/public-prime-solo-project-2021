@@ -15,7 +15,9 @@ function Nav() {
 
   return (
     <div className="nav">
-  
+      {/* <Link to="/home">
+        <h2 className="nav-title"> back </h2>
+      </Link> */}
       <div>
         {/* If no user is logged in, show these links */}
         {user.id === null &&
@@ -28,7 +30,12 @@ function Nav() {
         {/* If a user is logged in, show these links */}
         {user.id && (
           <>
+
+
             <NavBar />
+
+
+
           </>
         )}
       </div>
