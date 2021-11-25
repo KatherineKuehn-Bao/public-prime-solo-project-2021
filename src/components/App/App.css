@@ -265,3 +265,13 @@ padding-top: 30px;
 border-radius: 5px; /* 5px rounded corners */
 padding-top: 30px;
 }
+
+
+/* **** STICKY  */
+
+.table.sticky th{
+  position: sticky;
+  top: 0; 
+  background-color: rgb(186, 247, 155)
+
+}

@@ -5,6 +5,7 @@ import { useHistory } from 'react-router';
 
 //Add MUI IMPORTS 
 import * as React from 'react';
+import TableContainer from '@mui/material/TableContainer';
 import TableBody from '@mui/material/TableBody';
 import Table from '@mui/material/Table';
 import TableCell from '@mui/material/TableCell';
@@ -71,13 +72,21 @@ function IngredientsItem() {
     }
 
 
+
+
+
     // *******RETURN ************ //
     return (<>
-        <Table className="table">
+        <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+        <TableContainer sx={{ maxHeight: 710 }}>
 
-            <TableHead>
+        <Table className="table sticky"
+        >
+
+            <TableHead
+            >
                 <TableRow>
-                    <TableCell>Ingredients</TableCell>
+                    <TableCell >Ingredients</TableCell>
                     <TableCell> </TableCell>
                     <TableCell>Eat</TableCell>
                     <TableCell>Edit</TableCell>
@@ -164,8 +173,9 @@ function IngredientsItem() {
             </TableBody>
         </Table>
 
+        </TableContainer>
 
-
+        </Paper>
     </>)
 }
 export default IngredientsItem;
