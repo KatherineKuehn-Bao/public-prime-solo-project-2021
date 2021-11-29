@@ -64,7 +64,7 @@ const LocationChart = () => {
                     maintainAspectRatio: false,
                     plugins: {
                         legend: {
-                            position: 'bottom',
+                            position: 'top',
                         },
                         title: {
                             display: false,
