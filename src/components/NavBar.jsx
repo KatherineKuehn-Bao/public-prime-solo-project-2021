@@ -13,7 +13,7 @@ import React from 'react';
 //sticky Nav Set up 
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Dispatch, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 
 function FunFile() {
