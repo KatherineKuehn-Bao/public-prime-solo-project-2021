@@ -85,7 +85,6 @@ function EditForm(props) {
                                 value={editIngredient.food_name}
                                 onChange={(event) => handleChange(event, "food_name")}
                             />
-{/* ***** DOESNT PRE POPULATE  */}
                             <TextField
                             id="date"
                                 placeholder="expiration_date"
