@@ -14,12 +14,7 @@ import '@fontsource/roboto/700.css';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-// import BackButton from '../BackButton/BackButton';
-// import Nav from '../Nav/Nav';
-import Footer from '../Footer/Footer';
-
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-
 import AddForm from '../AddForm/AddForm';
 import UserPage from '../UserPage/UserPage';
 import Figures from '../Figures/Figures';
@@ -27,7 +22,6 @@ import Inventory from '../Inventory/Inventory';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import Settings from '../Settings/Settings';
 import EditForm from '../EditForm/EditForm';
 // import FunFile from '../FunFile';
 
@@ -86,7 +80,7 @@ function App() {
 
 
 
-          {/* TODO Add Edit Route */}
+          {/* Edit Route */}
           <ProtectedRoute 
           exact 
           path="/edit/:id" >
@@ -94,15 +88,6 @@ function App() {
            <EditForm 
            component={EditForm}/> 
           </ProtectedRoute>
-
-
-
-          {/* <ProtectedRoute
-            exact
-            path="/settings"
-          >
-            <Settings />
-          </ProtectedRoute> */}
 
 
           <Route
