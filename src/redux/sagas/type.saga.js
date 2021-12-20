@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
-// worker Saga: will be fired on "FETCH_USER" actions
+// worker Saga: will be fired on "FETCH_TYPE" actions
 function* fetchType() {
     try {
         const type = yield axios.get('/api/type');

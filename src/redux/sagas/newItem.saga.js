@@ -5,12 +5,9 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* postItem(action) {
     try {
         console.log('new item', action.payload);
-        yield axios.post ('/api/type/post', action.payload);
-
-        //yield put ({type: 'FETCH_INGREDIENTS'})
+        yield axios.post('/api/type/post', action.payload);
     } catch (error) {
         console.log('Error in POST', error);
-        
     }
 }
 
