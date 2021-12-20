@@ -1,13 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
 import NavBar from '../NavBar';
-
-//MUI  -- not used 
-// import HomeIcon from '@mui/icons-material/Home';
-
 
 
 function Nav() {
@@ -31,10 +26,7 @@ function Nav() {
         {user.id && (
           <>
 
-
             <NavBar />
-
-
 
           </>
         )}

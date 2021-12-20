@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 
-// import LogOutButton from '../LogOutButton/LogOutButton';
 import { useSelector } from 'react-redux';
 import Nav from '../Nav/Nav';
 import IngredientsList from '../IngredientsList/IngredientsList';
@@ -12,7 +11,6 @@ import InfoIcon from '@mui/icons-material/Info';
 
 //MUI IMPORT 
 import Button from '@mui/material/Button';
-// import Stack from '@mui/material/Stack';
 
 import './UserPage.css';
 
