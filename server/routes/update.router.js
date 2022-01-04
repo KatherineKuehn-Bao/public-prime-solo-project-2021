@@ -41,10 +41,6 @@ router.put('/waste', (req, res) => {
     })
 })
 
-
-
-
-
 //EDIT -- Works! 
 router.put('/edit/:id', (req, res) => {
 
