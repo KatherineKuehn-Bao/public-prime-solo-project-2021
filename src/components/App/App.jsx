@@ -1,3 +1,4 @@
+//import from REACT 
 import React, { useEffect } from 'react';
 import {
   HashRouter as Router,
@@ -5,6 +6,8 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 //MUI FONTS 
 import '@fontsource/roboto/300.css';
@@ -12,8 +15,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
-import { useDispatch, useSelector } from 'react-redux';
-
+//import routes 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import AddForm from '../AddForm/AddForm';
 import UserPage from '../UserPage/UserPage';
