@@ -32,11 +32,9 @@ function App() {
   const dispatch = useDispatch();
 
   const user = useSelector(store => store.user);
-  // const [ingredientsList, setIngredientsList] = useState([]);
 
   useEffect(() => {
     dispatch({ type: 'FETCH_USER' });
-    // dispatch({ type: 'FETCH_INGREDIENTS' });
   }, [dispatch]);
 
   return (
@@ -79,9 +77,7 @@ function App() {
             <AddForm />
           </ProtectedRoute>
 
-
-
-          {/* Edit Route */}
+{/* Edit Route */}
           <ProtectedRoute 
           exact 
           path="/edit/:id" >
@@ -89,7 +85,6 @@ function App() {
            <EditForm 
            component={EditForm}/> 
           </ProtectedRoute>
-
 
           <Route
             exact
@@ -138,8 +133,6 @@ function App() {
             <h1>404</h1>
           </Route>
         </Switch>
-        {/* <Footer /> */}
-        {/* <Nav/> */}
       </div>
     </Router>
   );
