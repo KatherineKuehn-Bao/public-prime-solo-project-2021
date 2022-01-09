@@ -22,8 +22,6 @@ import TextField from '@mui/material/TextField';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 
-
-
 //This form will edit and add new ingredients to the DB table 
 function AddForm() {
 

@@ -53,11 +53,10 @@ function EditForm(props) {
         history.push('/user');
     }
 
-    //CANCEL- works ---- ADD SNACKBAR 
+    //CANCEL- works 
     const cancelClick = (event) => {
         history.push('/user');
     }
-
 
     console.log('edit Ingredient', editIngredient);
 
